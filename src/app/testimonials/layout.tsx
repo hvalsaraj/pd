@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Customer Reviews & Testimonials | PracticeDilly",
+  title: "Customer Reviews | PracticeDilly",
   description: "Read real stories from dental practice owners and office managers about how PracticeDilly helped them streamline patient communication, reduce no-shows, and grow their practice.",
   keywords: [
     "PracticeDilly reviews",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     canonical: "https://practicedilly.com/testimonials",
   },
   openGraph: {
-    title: "Customer Reviews & Testimonials | PracticeDilly",
+    title: "Customer Reviews | PracticeDilly",
     description: "Read real stories from dental practice owners and office managers about how PracticeDilly helped them streamline patient communication, reduce no-shows, and grow their practice.",
     url: "https://practicedilly.com/testimonials",
     siteName: "PracticeDilly",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         url: "https://practicedilly.com/og-images/testimonials.jpg",
         width: 1200,
         height: 630,
-        alt: "PracticeDilly Customer Reviews & Testimonials",
+        alt: "PracticeDilly Customer Reviews",
       },
     ],
     locale: "en_US",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Customer Reviews & Testimonials | PracticeDilly",
+    title: "Customer Reviews | PracticeDilly",
     description: "Read real stories from dental practice owners and office managers about how PracticeDilly helped them streamline patient communication, reduce no-shows, and grow their practice.",
     images: ["https://practicedilly.com/og-images/testimonials.jpg"],
   },

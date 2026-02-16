@@ -112,7 +112,7 @@ export default function TestimonialSection() {
       {/* Header Section */}
       <SectionHeader
         icon={MessageCircleHeart}
-        label="Testimonials"
+        label="Reviews"
         heading={{
           text: "",
           highlighted: "Loved by Dentists ",

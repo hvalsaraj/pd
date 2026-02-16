@@ -258,7 +258,7 @@ export default function StickyNav() {
               href="/testimonials"
               className="text-sm font-normal px-3 py-2 rounded-lg transition-colors text-foreground hover:text-primary"
             >
-              Testimonials
+              Reviews
             </Link>
           </li>
 
@@ -714,14 +714,14 @@ export default function StickyNav() {
               )}
             </li>
 
-            {/* Testimonials - Mobile */}
+            {/* Reviews - Mobile */}
             <li className="border-b border-border">
               <Link
                 href="/testimonials"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block text-sm font-normal px-3 py-3 rounded-lg transition-colors text-foreground hover:text-primary"
               >
-                Testimonials
+                Reviews
               </Link>
             </li>
 

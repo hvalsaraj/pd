@@ -85,49 +85,61 @@ export default function Home() {
       <div className="relative flex min-h-screen items-center justify-center px-4 py-20 lg:px-16 border-b border-border">
         {/* Grid Background */}
         <GridBackground gridSize={1280/11} contentPadding={64} />
-        
-        
-        {/* ASCII Background Art */}
-        {/* <AnimatedMolar /> */}
 
         {/* Main Hero Content */}
         <div className="relative z-10 flex w-full max-w-[960px] flex-col items-center gap-8 text-center p-4 md:p-8 lg:p-[64px]">
-          {/* Badge */}
-          <div className="flex items-center gap-2.5 rounded-full border px-1.5 py-1">
-            <div className="flex items-center rounded-full bg-primary px-1.5 py-px">
-              <Paragraph variant="xs" color="primary" className="text-primary-foreground">New</Paragraph>
-            </div>
-            <Paragraph variant="sm">AI Voice Intelligence 2.0</Paragraph>
+          {/* Value Prop Pill: Affordable • Feature-Rich • Highest ROI */}
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 rounded-full border border-border bg-card/50 px-4 py-2 shadow-sm">
+            <span className="flex items-center gap-1.5">
+              <Check className="h-4 w-4 text-primary shrink-0" aria-hidden />
+              <Paragraph variant="sm" weight="medium">Most affordable</Paragraph>
+            </span>
+            <span className="hidden sm:inline text-muted" aria-hidden>•</span>
+            <span className="flex items-center gap-1.5">
+              <Check className="h-4 w-4 text-primary shrink-0" aria-hidden />
+              <Paragraph variant="sm" weight="medium">Most feature-rich</Paragraph>
+            </span>
+            <span className="hidden sm:inline text-muted" aria-hidden>•</span>
+            <span className="flex items-center gap-1.5">
+              <Check className="h-4 w-4 text-primary shrink-0" aria-hidden />
+              <Paragraph variant="sm" weight="medium">Highest ROI</Paragraph>
+            </span>
           </div>
 
           {/* Heading and Description */}
           <div className="flex flex-col gap-6 items-center">
             <H1>
-              AI-Powered Patient Communication for{" "}<br/>
-              <span className="text-primary">Dental Practices</span>
+              The Patient Engagement Platform{" "}<br/>
+              <span className="text-primary">That Pays for Itself</span>
             </H1>
-            <Paragraph className="max-w-[455px]">
-              Combine phones, texting, scheduling, and recalls in one AI-powered communication hub built for multi-location dental groups and healthcare practices.
-            </Paragraph>
+            <div className="mx-auto max-w-[520px] space-y-4 text-center">
+              <Paragraph variant="lg" className="leading-7 text-foreground/90">
+                Everything your dental practice needs in one place: phones, texting, scheduling, recalls, and patient forms. Real AI that binds everything together.
+              </Paragraph>
+              <Paragraph variant="base" className="leading-7 text-muted">
+                More features than the big-name tools, at a fraction of the cost.
+              </Paragraph>
+              <Paragraph variant="base" weight="medium" className="block pt-2 text-foreground">
+                Start free. No setup fee.
+              </Paragraph>
+            </div>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center gap-[15px]">
-            <Button variant="primary"
-            >
-              Get Started - No Setup Fee!
+            <Button variant="primary" href="#get-started">
+              Book a Quick Demo
             </Button>
             <Button 
               variant="secondary" 
               href="/pricing"
             >
-              Pricing
+              See Pricing
             </Button>
           </div>
 
           {/* Trust Indicator */}
           <div className="flex flex-col gap-4">
-            {/* <div className="h-px w-full bg-border" /> */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4">
               <div className="flex items-center gap-0.5" aria-hidden="true">
                 {[...Array(5)].map((_, i) => (
@@ -135,7 +147,7 @@ export default function Home() {
                 ))}
               </div>
               <Paragraph variant="sm" weight="medium" className="sm:text-base sm:leading-6 text-center sm:text-left">
-                PracticeDilly is Trusted by <span className="text-primary">500+</span> practices
+                Trusted by <span className="text-primary">500+</span> dental practices
               </Paragraph>
             </div>
           </div>

@@ -149,7 +149,7 @@ export default function Footer() {
                     About
                   </NavListItem>
                   <NavListItem href="/testimonials" borderBottom className="block py-4 px-6">
-                    Testimonials
+                    Reviews
                   </NavListItem>
                   <NavListItem href="/contact" className="block py-4 px-6">
                     Contact

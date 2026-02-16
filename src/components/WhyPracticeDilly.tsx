@@ -1,7 +1,7 @@
 import SectionContainer from "@/common/SectionContainer";
 import StatCard from "@/common/StatCard";
 import SectionHeader from "@/common/SectionHeader";
-import { CalendarCheck, Clock, Star, MessageCircleHeart } from "lucide-react";
+import { CalendarCheck, Clock, Star, MessageCircleHeart, Phone } from "lucide-react";
 
 export default function WhyPracticeDilly() {
   return (
@@ -35,6 +35,14 @@ export default function WhyPracticeDilly() {
           valueUnit="hrs"
           description={`saved per week`}
           explanation="Automate intake forms, insurance verification, and routine inquiries."
+        />
+        <StatCard
+          icon={<Phone className="w-full h-full" />}
+          title="Never Miss a Call"
+          value="24/7"
+          valueUnit=""
+          description={`AI answers after hours`}
+          explanation="Voice AI handles calls when your office is closed, captures leads, and routes urgent messages to your team."
         />
         <StatCard
           icon={<Star className="w-full h-full" />}

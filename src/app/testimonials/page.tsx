@@ -159,10 +159,10 @@ export default function TestimonialsPage() {
         <GridBackground gridSize={1280/11}  contentWidth={960} contentPadding={64} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 lg:px-16">
           <div className="flex flex-col items-center gap-8 text-center max-w-4xl mx-auto">
-            <HeroPill icon="MessageCircleHeart" text="Testimonials" as="h1" />
+            <HeroPill icon="MessageCircleHeart" text="Reviews" as="h1" />
             <HeadingWithHighlight
-              text="Customer Reviews & "
-              highlighted="Testimonials"
+              text="Customer "
+              highlighted="Reviews"
               as="h2"
             />
             <p className="font-sans text-base leading-6 text-foreground max-w-2xl">

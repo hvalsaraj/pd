@@ -138,9 +138,9 @@ export default function PricingSection() {
           <Button
             variant="secondary"
             className="px-8 py-3 text-base font-medium"
-            href="/pricing"
+            href="#get-started"
           >
-            Get Pricing
+            Book a Quick Demo
           </Button>
           <p className="font-sans font-normal text-xs leading-4 text-muted text-center">
             Setup takes less than 15 minutes • No credit card required

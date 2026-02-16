@@ -1,0 +1,115 @@
+{
+  "hero": {
+    "heading": { "text": "Capture Every Call. ", "highlighted": "Convert Every Opportunity.", "suffix": "" },
+    "description": "Smart routing, visual voicemail, call analytics, and 24/7 AI. One HIPAA-ready phone system for your practice.",
+    "ctaPrimary": "Get Started",
+    "ctaSecondary": "See Pricing"
+  },
+  "trustedBy": {
+    "heading": "Trusted by",
+    "count": "500+",
+    "suffix": "Healthcare Practices"
+  },
+  "featureTabs": {
+    "heading": { "text": "Feature-Packed to Improve ", "highlighted": "Every Front Office Workflow", "suffix": "" },
+    "description": "Empower team members with AI-powered calls, messages, and analytics across devices. Measure, analyze, and optimize team performance through every touch point in your practice.",
+    "tabs": [
+      {
+        "id": "enterprise-voip",
+        "label": "Enterprise VoIP",
+        "subtitle": "Phone System for Scalable, High-Volume Communication",
+        "description": "Improve communication and daily workflows with IVR & Call Routing, advanced analytics, and intelligent automation.",
+        "ctaText": "Get Started",
+        "ctaHref": "/demo",
+        "features": [
+          { "icon": "ChartColumn", "title": "Call Flow Analytics", "description": "Gain visibility into call performance to optimize workflows, improve communication, and drive better outcomes." },
+          { "icon": "FileText", "title": "Cloud Fax", "description": "Modernize faxing with digital send and receive, eliminating machines and manual steps." },
+          { "icon": "Route", "title": "IVR & Call Routing", "description": "Build custom call workflows that route every call to the right team for faster responses and fewer missed needs." },
+          { "icon": "PhoneForwarded", "title": "Missed Call Response Tracking", "description": "Turn missed calls into meaningful connections with instant, thoughtful follow-ups." },
+          { "icon": "MessageSquare", "title": "Two-Way Texting", "description": "Convert missed calls into secure, two-way texts so teams can re-engage callers without increasing workload." },
+          { "icon": "Voicemail", "title": "Visual Voicemail", "description": "Read, sort, and act on voicemails instantly with visual voicemail for faster follow-ups and a better experience." }
+        ]
+      },
+      {
+        "id": "conversational-ai",
+        "label": "Conversational AI",
+        "subtitle": "AI-Powered Conversational Intelligence for Call Tracking and Conversion",
+        "description": "Track call outcomes, analyze call transcripts, and follow up on missed opportunities to convert more new patients with the power of AI.",
+        "ctaText": "Get Started",
+        "ctaHref": "/demo",
+        "features": [
+          { "icon": "Award", "title": "AI Call Scoring", "description": "Complete visibility into every patient call to improve quality, compliance, and outcomes." },
+          { "icon": "FileText", "title": "AI Call Transcripts", "description": "AI call transcripts provide complete visibility into patient conversations, reducing errors and improving follow-ups." },
+          { "icon": "Bot", "title": "AI Receptionist", "description": "A 24/7 virtual assistant that answers calls, provides information, and books appointments automatically." },
+          { "icon": "BellRing", "title": "Missed Call Automations", "description": "AI-powered missed call automation helps you recover opportunities and improve patient responsiveness." },
+          { "icon": "Lightbulb", "title": "Opportunity Detection", "description": "Patient intent is identified, and revenue opportunities are flagged so nothing is missed." },
+          { "icon": "ListChecks", "title": "Opportunity Tracking", "description": "Patient intent is continuously tracked to ensure every opportunity is captured." },
+          { "icon": "CheckCircle", "title": "Post-Call Task Detection", "description": "Every patient call is converted into clear next steps with automated follow-ups." }
+        ]
+      },
+      {
+        "id": "attribution-analytics",
+        "label": "Attribution Analytics",
+        "subtitle": "Call Attribution Analytics to Track Marketing Performance and ROI",
+        "description": "Use attribution analytics to identify the most effective marketing channels and optimize your budget for better results.",
+        "ctaText": "Get Started",
+        "ctaHref": "/demo",
+        "features": [
+          { "icon": "Search", "title": "Call Source Tracking", "description": "Every call is attributed to its source and transformed into growth insights." },
+          { "icon": "Megaphone", "title": "Campaign and Keyword Tracking", "description": "Track every call, text, and message back to its source to see what drives appointments and revenue." },
+          { "icon": "Link2", "title": "Dynamic Number Insertion", "description": "Every click leads to a call, and each call is accurately matched to its campaign, so no inquiry is ever lost." },
+          { "icon": "DollarSign", "title": "Marketing Spend Optimization", "description": "Optimize marketing spend by tracking calls, measuring conversions, and improving ROI." }
+        ]
+      },
+      {
+        "id": "call-center-workflows",
+        "label": "Call Center Workflows",
+        "subtitle": "Centralized Call Routing and Workflow Automation for Scalable Teams",
+        "description": "Centralize your phone conversations, build remote teams to take over phone calls, and configure rules and workflows to transfer calls between AI agents, team members, and call centers.",
+        "ctaText": "Get Started",
+        "ctaHref": "/demo",
+        "features": [
+          { "icon": "ClockFading", "title": "After-Hours Call Transfers", "description": "Intelligently manage after-hours calls so critical patient needs are never missed." },
+          { "icon": "Settings", "title": "Call Flow Management", "description": "Modernize call management with complete control and flexible call flows, without added operational burden." },
+          { "icon": "Route", "title": "Custom Phone Trees", "description": "Design custom phone trees that route every call to the correct destination with minimal effort." },
+          { "icon": "BarChart", "title": "Monitoring and Reporting", "description": "Get real-time insights into every call and interaction to act faster and smarter." },
+          { "icon": "Globe", "title": "Time Zone Management", "description": "Route calls accurately across regions while keeping patients and teams aligned." }
+        ]
+      },
+      {
+        "id": "integrations",
+        "label": "Integrations",
+        "subtitle": "Connected Integrations for Unified Practice Operations",
+        "description": "Deeply integrated into all major practice management systems, CRM systems, and analytics platforms.",
+        "ctaText": "Get Started",
+        "ctaHref": "/demo",
+        "features": [
+          { "icon": "Megaphone", "title": "Google Ads Integration", "description": "Link Google Ads clicks to patient calls and appointments to see which ads drive real results." },
+          { "icon": "BarChart", "title": "Google Analytics Integration", "description": "Connect patient call data with Google Analytics to clearly measure marketing performance and ROI." }
+        ]
+      }
+    ]
+  },
+  "pmsIntegration": {
+    "heading": "Seamless PMS Integration",
+    "description": "PracticeDilly seamlessly integrates with leading PMS, CRM, and analytics platforms, giving you effortless visibility across your operations.",
+    "ctaText": "See All Integrations",
+    "ctaHref": "/integrations",
+    "bullets": [
+      "Every inbound and outbound call is linked to the correct patient profile in your PMS, giving your team instant context without manual lookups.",
+      "Initiate calls directly from your PMS while PracticeDilly captures transcriptions, call outcomes, and key insights in real time.",
+      "Keep communication, scheduling, and front-office operations fully aligned across locations without disrupting existing PMS processes.",
+      "PracticeDilly works alongside your PMS to ensure cleaner data, faster follow-ups, and a smoother experience for both team members and patients."
+    ]
+  },
+  "testimonial": {
+    "quote": "After 30 days on PracticeDilly, we identified 52 missed patient calls in our opportunity bucket. The AI organized each call with the patient's details, allowing us to follow up and schedule them. This resulted in converting all 52 opportunities, generating approximately $78,000 in additional revenue for the practice.",
+    "authorName": "Katie Post",
+    "authorTitle": "CEO"
+  },
+  "finalCta": {
+    "heading": "Grow Your Practice with PracticeDilly",
+    "subheading": "A more intelligent, AI-powered phone system built to improve communication, performance, and practice growth.",
+    "ctaText": "Get Started"
+  }
+}
