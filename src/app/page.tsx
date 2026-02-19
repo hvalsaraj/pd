@@ -97,12 +97,12 @@ export default function Home() {
             <span className="hidden sm:inline text-muted" aria-hidden>•</span>
             <span className="flex items-center gap-1.5">
               <Check className="h-4 w-4 text-primary shrink-0" aria-hidden />
-              <Paragraph variant="sm" weight="medium">Most feature-rich</Paragraph>
+              <Paragraph variant="sm" weight="medium">Simple to Implement</Paragraph>
             </span>
             <span className="hidden sm:inline text-muted" aria-hidden>•</span>
             <span className="flex items-center gap-1.5">
               <Check className="h-4 w-4 text-primary shrink-0" aria-hidden />
-              <Paragraph variant="sm" weight="medium">Highest ROI</Paragraph>
+              <Paragraph variant="sm" weight="medium">Easy to Use</Paragraph>
             </span>
           </div>
 
@@ -114,7 +114,7 @@ export default function Home() {
             </H1>
             <div className="mx-auto max-w-[520px] space-y-4 text-center">
               <Paragraph variant="lg" className="leading-7 text-foreground/90">
-                Everything your dental practice needs in one place: phones, texting, scheduling, recalls, and patient forms. Real AI that binds everything together.
+                Everything your dental practice needs in one place: phones, texting, scheduling, recalls, and patient forms. With AI powered workflows that bind everything together.
               </Paragraph>
               <Paragraph variant="base" className="leading-7 text-muted">
                 More features than the big-name tools, at a fraction of the cost.
@@ -126,14 +126,11 @@ export default function Home() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center gap-[15px]">
-            <Button variant="primary" href="#get-started">
-              Book a Quick Demo
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <Button variant="primary" href="#get-started" className="px-8 py-4 text-base font-semibold">
+              Book Demo
             </Button>
-            <Button 
-              variant="secondary" 
-              href="/pricing"
-            >
+            <Button variant="secondary" href="/pricing" className="px-6 py-3">
               See Pricing
             </Button>
           </div>
@@ -295,11 +292,29 @@ export default function Home() {
         </div>
       </div>
       <WhyPracticeDilly />
+      <div className="flex justify-center py-10">
+        <Button variant="primary" href="#get-started" className="px-8 py-3.5">Book Demo</Button>
+      </div>
       <TestimonialSection />
+      <div className="flex justify-center py-10">
+        <Button variant="primary" href="#get-started" className="px-8 py-3.5">Book Demo</Button>
+      </div>
       <IntegrationsSection />
+      <div className="flex justify-center py-10">
+        <Button variant="primary" href="#get-started" className="px-8 py-3.5">Book Demo</Button>
+      </div>
       <ModernPracticeSection />
+      <div className="flex justify-center py-10">
+        <Button variant="primary" href="#get-started" className="px-8 py-3.5">Book Demo</Button>
+      </div>
       <FeaturesShowcaseSection />
+      <div className="flex justify-center py-10">
+        <Button variant="primary" href="#get-started" className="px-8 py-3.5">Book Demo</Button>
+      </div>
       <PricingSection />
+      <div className="flex justify-center py-10">
+        <Button variant="primary" href="#get-started" className="px-8 py-3.5">Book Demo</Button>
+      </div>
       <HomeFAQSection />
       <CTASection />
       

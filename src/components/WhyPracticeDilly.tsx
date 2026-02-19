@@ -14,7 +14,7 @@ export default function WhyPracticeDilly() {
           text: "Proven Results That ",
           highlighted: "Drive Success",
         }}
-        description="Join 500+ practices that trust PracticeDilly to transform their patient communication and grow their practice."
+        description="Join hundreds of practices that trust PracticeDilly to transform their patient communication and grow their practice."
         className="max-w-[565px] w-full px-4"
       />
 

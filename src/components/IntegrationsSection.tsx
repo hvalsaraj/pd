@@ -54,7 +54,7 @@ export default function IntegrationsSection() {
           <Link
             key={integration.name}
             href={`/integrations/${integration.slug}`}
-            className="group flex items-center justify-center gap-3 rounded-xl border border-border bg-card px-8 py-10 transition-all duration-200 hover:border-primary hover:bg-primary/5"
+            className="group flex cursor-pointer items-center justify-center gap-3 rounded-xl border border-border bg-card px-8 py-10 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary hover:bg-primary/5 hover:shadow-md active:scale-[0.99]"
           >
             <div className="relative h-14 w-[140px] shrink-0">
               <Image

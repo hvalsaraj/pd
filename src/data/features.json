@@ -223,37 +223,37 @@
         "suffix": ""
       },
       "description": "",
-      "layout": "featureGrid",
+      "layout": "boxed",
       "features": [
         {
           "icon": "Users",
           "title": "Family Grouping",
-          "description": "PracticeDilly automatically groups multiple appointments from a family (pediatric dental appointments) and sends out a single reminder message. Mom or Dad gets one message for all the appointments and can easily confirm with a single response."
+          "description": "Group family appointments together and send one reminder. Mom or Dad gets a single message for all the kids' visits and can confirm with one tap."
         },
         {
           "icon": "Repeat",
           "title": "Confirmation Flexibility",
-          "description": "Your practice has total control and flexibility over when you'd like to get confirmations from your patients for appointments that fall after/between holidays or are scheduled for Mondays."
+          "description": "You decide when to ask for confirmations. Works great for appointments after holidays, between weekends, or on Mondays, whenever it fits your schedule."
         },
         {
           "icon": "BellRing",
-          "title": "On-Demand Reminders",
-          "description": "Have the ability to kick off reminders to all the patients of a particular date or just a single patient. Let's say a new appointment was added to your schedule; you can quickly send a customized reminder message to the patient."
+          "title": "On Demand Reminders",
+          "description": "Send reminders whenever you need to, for one patient or a whole day. New appointment? Send a custom reminder in seconds."
         },
         {
           "icon": "Bell",
           "title": "Personalized Reminders",
-          "description": "You have total control over the number of reminders that you would like to send to your patients before an appointment. Personalize how you'd like to send the reminders (email, text messages, phone calls) as well as when they are sent (30 days, 7 days, even 2 hours before the appointment) in a way that suits your practice's needs."
+          "description": "Pick how many reminders you want and how to send them: email, text, or call. You choose the timing too, whether that's 30 days out, a week before, or 2 hours ahead."
         },
         {
           "icon": "MessageSquare",
           "title": "Notification Status",
-          "description": "Conveniently view the status of each reminder notification sent to your patients through the PracticeDilly website. By logging into the portal, you can see what the status of each reminder notification is: whether the message was successfully delivered, if a patient responded, etc."
+          "description": "See delivery and response status at a glance. You'll know if a message went through, got opened, or was replied to, all from your portal."
         },
         {
           "icon": "Ban",
           "title": "Texting Opt Out",
-          "description": "Patients have the flexibility to opt out of text reminders by simply replying with STOP to the text messages. PracticeDilly will automatically exclude the patient from any future text reminders. On the other hand, you can personalize how each of your patients would like to receive their reminders (email, text message, phone call)."
+          "description": "Patients can reply STOP to opt out anytime. PracticeDilly handles it for you. Everyone else can keep their preferred channel: email, text, or call."
         }
       ]
     },
@@ -779,52 +779,39 @@
         "highlighted": "Management",
         "suffix": ""
       },
-      "description": "From collection to response to analysis—everything you need in one platform.",
-      "layout": "benefitBlocks",
-      "blocks": [
-        {
-          "title": "Gain exposure on popular sites",
-          "description": "Get reviews on the web sites that matter most. Positive reviews on sites like Google, Yelp, and Facebook can help drive new patients to your practice."
-        },
-        {
-          "title": "Build up positive online reviews",
-          "description": "Our proprietary software identifies patients most likely to give your practice a 5 star rating and recommends them to their social network. PracticeDilly makes it easy for your patients to post a positive review with the click of a button."
-        },
-        {
-          "title": "Acquire more new patients",
-          "description": "Online reviews serve as a relatively inexpensive marketing strategy for attracting new patients, garnering the trust of future and current patients, and increasing your ranking in Google and other search engines."
-        }
-      ],
+      "description": "Everything you need to collect reviews, respond to feedback, and track your reputation. All in one place.",
+      "layout": "boxed",
+      "blocks": [],
       "features": [
         {
           "icon": "Send",
           "title": "Automated Review Requests",
-          "description": "Send perfectly-timed requests after appointments. Happy patients leave reviews; unhappy ones get follow-up."
+          "description": "Review requests go out automatically after each appointment, timed to catch patients when the experience is still fresh."
         },
         {
           "icon": "Globe",
           "title": "Multi-Platform Support",
-          "description": "Collect reviews on Google, Facebook, Yelp, and Healthgrades from one workflow."
+          "description": "Collect reviews on Google, Facebook, Yelp, and Healthgrades without juggling multiple tools or workflows."
         },
         {
           "icon": "Bell",
           "title": "Negative Review Alerts",
-          "description": "Get instant notifications for low ratings. Respond quickly before issues escalate."
+          "description": "Get notified the moment a low rating comes in so you can respond quickly and turn things around."
         },
         {
           "icon": "FileText",
           "title": "Response Templates",
-          "description": "Pre-written responses for common scenarios. Personalize and reply in seconds."
+          "description": "Ready-to-use replies for the most common review scenarios. Personalize and send in just a few seconds."
         },
         {
           "icon": "BarChart",
           "title": "Reputation Dashboard",
-          "description": "Track your ratings, response times, and trends across all platforms in one view."
+          "description": "See your ratings, response times, and review trends across every platform in one clean view."
         },
         {
           "icon": "Filter",
           "title": "Smart Filtering",
-          "description": "Happy patients go to Google. Unhappy patients reach you privately first."
+          "description": "Happy patients are guided to public review sites. Patients with concerns get a private channel to share feedback first."
         }
       ]
     },
@@ -1178,7 +1165,7 @@
         "suffix": ""
       },
       "description": "",
-      "layout": "steps",
+      "layout": "boxed",
       "features": [
         {
           "icon": "Send",
@@ -1745,18 +1732,21 @@
         "suffix": ""
       },
       "description": "Access your schedule, communicate with patients, and manage multiple offices—all from the mobile app.",
-      "layout": "benefitBlocks",
+      "layout": "boxedBlocks",
       "features": [],
       "blocks": [
         {
+          "icon": "Calendar",
           "title": "Access your schedule on the GO!",
           "description": "Tired of remoting into your office to access your schedule? Now access it anywhere and any time with the click of a button."
         },
         {
+          "icon": "MessageSquare",
           "title": "Seamless Communication",
           "description": "Text your patients instantly from our mobile app without revealing your personal mobile number. Studies show that quickly responding to your patients increases satisfaction."
         },
         {
+          "icon": "Building2",
           "title": "Manage multiple ",
           "description": "Do you manage multiple dental practices? Access all of your office schedules on the go from our mobile app.",
           "titleHighlighted": "dental",

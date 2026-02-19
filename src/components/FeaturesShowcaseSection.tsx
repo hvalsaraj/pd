@@ -88,10 +88,10 @@ export default function FeaturesShowcaseSection() {
         <div className="flex flex-col gap-10 items-center mb-10">
           <SectionHeader
             heading={{
-              text: "See How We Help You Automate Your ",
-              highlighted: "Front Office",
+              text: "Efficiently Automate ",
+              highlighted: "Your Front Office",
             }}
-            description="Comprehensive tools designed to modernize every aspect of your practice management."
+            description="PracticeDilly provides comprehensive tools designed to automate and modernize every aspect of your practice management."
             className="max-w-[600px]"
           />
         </div>

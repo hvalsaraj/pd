@@ -608,7 +608,7 @@ export default function StickyNav() {
         {/* Right Side Actions */}
         <div className="hidden lg:flex items-center gap-4 shrink-0">
           <Button href="#get-started" variant="primary" className="px-4">
-          Get Started
+            Book Demo
           </Button>
         </div>
 
@@ -991,7 +991,7 @@ export default function StickyNav() {
             {/* Sign up Button - Mobile */}
             <li className="pt-4">
               <Button href="#get-started" variant="primary" className="w-full">
-                Get Started
+                Book Demo
               </Button>
             </li>
           </ul>

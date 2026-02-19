@@ -194,18 +194,8 @@ export default function PricingPage() {
             {pricingPlans.map((plan, index) => (
               <div
                 key={plan.name}
-                className={`relative border-l -ml-px border-border flex flex-col gap-6 transition-all duration-200 h-full border-y ${
-                  plan.popular ? "border-y-primary" : ""
-                }`}
+                className="relative border-l -ml-px border-border flex flex-col gap-6 transition-all duration-200 h-full border-y"
               >
-                {plan.popular && (
-                  <div className="absolute top-4 right-4 z-10">
-                    <div className="bg-primary text-background px-3 py-1 rounded-lg">
-                      <p className="font-sans font-medium text-xs leading-4">Most Popular</p>
-                    </div>
-                  </div>
-                )}
-
                 <div className="flex flex-col gap-4 p-6 md:p-8">
                   <H3 className="font-semibold">
                     {plan.name}
@@ -228,7 +218,7 @@ export default function PricingPage() {
 
                 <div className="px-6 md:px-8 pb-6 md:pb-8">
                   <Button 
-                    variant={plan.popular ? "primary" : "secondary"} 
+                    variant="secondary" 
                     className="w-full"
                   >
                     {plan.cta}

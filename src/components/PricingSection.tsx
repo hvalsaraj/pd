@@ -69,13 +69,7 @@ export default function PricingSection() {
           </div>
 
           {/* Multi-Location Groups */}
-          <div className="border border-primary flex flex-col gap-6 relative transition-all duration-200 h-full">
-            <div className="absolute top-4 right-4">
-              <div className="bg-primary text-background px-3 py-1 rounded-lg">
-                <p className="font-sans font-medium text-xs leading-4">Most Popular</p>
-              </div>
-            </div>
-
+          <div className="border border-border flex flex-col gap-6 transition-all duration-200 h-full">
             <div className="flex flex-col gap-4 p-6 md:p-8">
               <H3>
                 Multi-Location Groups
@@ -95,15 +89,6 @@ export default function PricingSection() {
                 </li>
               ))}
             </ul>
-
-            {/* <div className="flex flex-col gap-2 p-6 md:p-8 border-border">
-              <p className="font-sans font-medium text-sm leading-5 text-foreground">
-                Trusted by 100+ multi-location groups
-              </p>
-              <p className="font-sans font-normal text-sm leading-5 text-muted">
-                "Scaled seamlessly across multiple locations. Game-changer for our practice group." - Pacific Ocean Dental Group
-              </p>
-            </div> */}
           </div>
         </div>
 
@@ -136,11 +121,11 @@ export default function PricingSection() {
             </p>
           </div>
           <Button
-            variant="secondary"
-            className="px-8 py-3 text-base font-medium"
+            variant="primary"
+            className="px-8 py-3.5 text-base font-medium"
             href="#get-started"
           >
-            Book a Quick Demo
+            Book Demo
           </Button>
           <p className="font-sans font-normal text-xs leading-4 text-muted text-center">
             Setup takes less than 15 minutes • No credit card required

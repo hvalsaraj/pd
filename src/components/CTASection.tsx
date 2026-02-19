@@ -56,9 +56,9 @@ export default function CTASection() {
               href="#get-started"
               icon={<ArrowRight className="h-5 w-5" />}
               iconPosition="right"
-              className="w-full sm:w-auto px-8 py-3 text-base font-medium"
+              className="w-full sm:w-auto px-8 py-3.5 text-base font-semibold"
             >
-              Book a Quick Demo
+              Book Demo
             </Button>
             <p className="font-sans font-normal text-xs leading-4 text-muted text-center">
               Setup takes less than 5 minutes • No commitment required

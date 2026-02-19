@@ -14,6 +14,8 @@ export interface BenefitBlock {
   title: string;
   description: string;
   image?: string;
+  /** Icon name for boxed layout (e.g. Calendar, MessageSquare) */
+  icon?: string;
   /** When set, render title as: title + <highlighted> + titleSuffix (e.g. "Manage multiple " + "dental" + " offices") */
   titleHighlighted?: string;
   titleSuffix?: string;
@@ -29,7 +31,7 @@ interface FeatureListSectionProps {
   features: Feature[];
   layout?: string;
   id?: string;
-  /** When layout is "benefitBlocks", use these blocks instead of features grid */
+  /** When layout is "benefitBlocks" or "boxedBlocks", use these blocks instead of features grid */
   blocks?: BenefitBlock[];
 }
 
@@ -134,12 +136,82 @@ function StepsLayout({ features }: { features: Feature[] }) {
               )}
 
               {/* Title */}
-              <h3 className="font-heading font-medium text-lg leading-6 text-foreground">
+              <h3 className="font-heading font-normal text-lg leading-6 text-foreground">
                 {feature.title}
               </h3>
 
               {/* Description */}
               <p className="font-sans font-normal text-sm leading-5 text-muted tracking-normal max-w-[280px]">
+                {feature.description}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/** Boxed blocks layout - individual rounded cards with icon, title, description (matches screenshot style) */
+function BoxedBlocksLayout({ blocks }: { blocks: BenefitBlock[] }) {
+  return (
+    <div className="w-full px-4 md:px-8 lg:px-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch w-full">
+        {blocks.map((block, index) => {
+          const IconComponent = block.icon ? getIcon(block.icon) : null;
+          return (
+            <div
+              key={index}
+              className="bg-card border border-border rounded-xl p-6 md:p-8 flex flex-col items-start gap-4 text-left transition-all duration-200 hover:border-primary"
+            >
+              {IconComponent && (
+                <div className="bg-primary/10 border border-primary/20 flex items-center justify-center p-2.5 rounded-[10px] shrink-0">
+                  <IconComponent className="w-5 h-5 text-primary" aria-hidden />
+                </div>
+              )}
+              <h3 className="font-heading font-normal text-lg leading-snug text-foreground">
+                {block.titleHighlighted != null && block.titleSuffix != null ? (
+                  <>
+                    {block.title}
+                    <span className="text-primary">{block.titleHighlighted}</span>
+                    {block.titleSuffix}
+                  </>
+                ) : (
+                  block.title
+                )}
+              </h3>
+              <p className="font-sans font-normal text-[15px] leading-[1.6] text-muted tracking-normal">
+                {block.description}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/** Boxed cards layout - individual rounded cards with icon, title, description (matches texting feature style) */
+function BoxedLayout({ features }: { features: Feature[] }) {
+  return (
+    <div className="w-full px-4 md:px-8 lg:px-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 items-stretch w-full">
+        {features.map((feature, index) => {
+          const IconComponent = getIcon(feature.icon);
+          return (
+            <div
+              key={index}
+              className="bg-card border border-border rounded-xl p-6 md:p-8 flex flex-col items-start gap-4 text-left shadow-sm hover:border-primary transition-all duration-200"
+            >
+              {IconComponent && (
+                <div className="bg-[rgba(94,72,240,0.1)] border border-[rgba(94,72,240,0.25)] flex items-center justify-center p-2.5 rounded-[10px] shrink-0">
+                  <IconComponent className="w-5 h-5 text-primary" />
+                </div>
+              )}
+              <h3 className="font-heading font-normal text-lg leading-snug text-foreground">
+                {feature.title}
+              </h3>
+              <p className="font-sans font-normal text-[15px] leading-[1.6] text-muted tracking-normal">
                 {feature.description}
               </p>
             </div>
@@ -179,29 +251,33 @@ function FeatureGridLayout({ features }: { features: Feature[] }) {
   );
 }
 
-/** Accent bar + title + description boxes (2x2 grid), consistent with campaigns feature visual language */
+/** 2×2 boxed cards with icon, title, description — same card language as BoxedLayout */
 function AccentBlocksLayout({ features }: { features: Feature[] }) {
   return (
-    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start">
-      {features.map((feature, index) => (
-        <div
-          key={index}
-          className="flex items-start gap-3 text-left"
-        >
-          <span
-            className="shrink-0 w-1 rounded-full min-h-[1.5em] mt-1.5 bg-primary"
-            aria-hidden
-          />
-          <div className="flex flex-col gap-2 min-w-0">
-            <h3 className="font-heading font-semibold text-lg md:text-xl leading-tight text-foreground">
-              {feature.title}
-            </h3>
-            <p className="font-sans font-normal text-sm leading-6 text-muted tracking-normal">
-              {feature.description}
-            </p>
-          </div>
-        </div>
-      ))}
+    <div className="w-full px-4 md:px-8 lg:px-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch w-full">
+        {features.map((feature, index) => {
+          const IconComponent = getIcon(feature.icon);
+          return (
+            <div
+              key={index}
+              className="bg-card border border-border rounded-xl p-6 md:p-8 flex flex-col items-start gap-4 text-left hover:border-primary transition-colors duration-200"
+            >
+              {IconComponent && (
+                <div className="bg-primary/10 border border-primary/20 flex items-center justify-center p-2.5 rounded-[10px] shrink-0">
+                  <IconComponent className="w-5 h-5 text-primary" aria-hidden />
+                </div>
+              )}
+              <h3 className="font-heading font-normal text-lg leading-snug text-foreground">
+                {feature.title}
+              </h3>
+              <p className="font-sans font-normal text-[15px] leading-[1.6] text-muted tracking-normal">
+                {feature.description}
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -215,6 +291,8 @@ export default function FeatureListSection({
   blocks,
 }: FeatureListSectionProps) {
   const isSteps = layout === "steps";
+  const isBoxed = layout === "boxed";
+  const isBoxedBlocks = layout === "boxedBlocks" && blocks && blocks.length > 0;
   const isFeatureGrid = layout === "featureGrid";
   const isBenefitBlocks = layout === "benefitBlocks" && blocks && blocks.length > 0;
   const isAccentBlocks = layout === "accentBlocks";
@@ -222,29 +300,29 @@ export default function FeatureListSection({
   return (
     <SectionContainer
       id={id}
-      className={`${isSteps ? "items-center" : "md:items-start px-4 md:px-8 lg:px-12"} ${isFeatureGrid ? "items-center" : ""} ${isBenefitBlocks ? "items-stretch" : ""} ${isAccentBlocks ? "items-stretch" : ""}`}
+      className={`${isSteps || isBoxed || isBoxedBlocks || isAccentBlocks ? "items-center" : "md:items-start px-4 md:px-8 lg:px-12"} ${isFeatureGrid ? "items-center" : ""} ${isBenefitBlocks ? "items-stretch" : ""}`}
     >
       <div className={`flex flex-col gap-4 w-full ${
         isSteps
           ? "items-center px-4 md:px-8 lg:px-12"
-          : isFeatureGrid
-            ? "items-center max-w-3xl mx-auto text-center"
-            : isBenefitBlocks
-              ? "items-center md:items-start max-w-[557px] px-4 md:px-8 lg:px-12"
-              : isAccentBlocks
-                ? "items-center md:items-start max-w-3xl"
+          : isBoxed || isBoxedBlocks || isAccentBlocks
+            ? "items-center px-4 md:px-8 lg:px-12"
+            : isFeatureGrid
+              ? "items-center max-w-3xl mx-auto text-center"
+              : isBenefitBlocks
+                ? "items-center md:items-start max-w-[557px] px-4 md:px-8 lg:px-12"
                 : "items-center md:items-start max-w-[557px]"
       }`}>
         <HeadingWithHighlight
           text={heading.text}
           highlighted={heading.highlighted}
           suffix={heading.suffix}
-          className={isSteps ? "text-center" : isFeatureGrid ? "text-center" : isAccentBlocks ? "text-center md:text-left" : "text-center md:text-left"}
+          className={isSteps || isBoxed || isBoxedBlocks || isAccentBlocks ? "text-center" : isFeatureGrid ? "text-center" : "text-center md:text-left"}
           as="h2"
         />
         {description && (
           <p className={`font-sans font-normal leading-6 text-foreground text-base tracking-normal w-full ${
-            isSteps ? "text-center max-w-xl" : isFeatureGrid ? "text-center" : isAccentBlocks ? "text-center md:text-left" : "text-center md:text-left"
+            isSteps || isBoxed || isBoxedBlocks || isAccentBlocks ? "text-center max-w-xl" : isFeatureGrid ? "text-center" : "text-center md:text-left"
           }`}>
             {description}
           </p>
@@ -253,6 +331,10 @@ export default function FeatureListSection({
 
       {isSteps ? (
         <StepsLayout features={features} />
+      ) : isBoxed ? (
+        <BoxedLayout features={features} />
+      ) : isBoxedBlocks ? (
+        <BoxedBlocksLayout blocks={blocks!} />
       ) : isFeatureGrid ? (
         <FeatureGridLayout features={features} />
       ) : isBenefitBlocks ? (
