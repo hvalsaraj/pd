@@ -1,9 +1,6 @@
-import { LucideIcon } from "lucide-react";
 import HeadingWithHighlight from "./HeadingWithHighlight";
 
 interface SectionHeaderProps {
-  icon?: LucideIcon;
-  label?: string;
   heading: {
     text: string;
     highlighted?: string;
@@ -13,32 +10,22 @@ interface SectionHeaderProps {
   className?: string;
   /** Semantic heading level for the section heading (default h2) */
   headingAs?: "h1" | "h2" | "h3";
+  /** Tailwind padding-top classes (e.g. "pt-12"). Default: "pt-12". */
+  paddingTop?: string;
+  /** Tailwind gap classes between heading and description (e.g. "gap-4"). Default: "gap-4". */
+  gap?: string;
 }
 
 export default function SectionHeader({
-  icon: Icon,
-  label,
   heading,
   description,
   className = "",
   headingAs = "h2",
+  paddingTop = "pt-12",
+  gap = "gap-4",
 }: SectionHeaderProps) {
   return (
-    <header className={`flex flex-col gap-4 items-center w-full pt-12 ${className}`}>
-      {(Icon || label) && (
-        <div className="flex gap-1 items-center justify-center pb-1.5 border-b border-border">
-          {Icon && (
-            <div className="relative shrink-0 w-3.5 h-3.5 text-muted" aria-hidden="true">
-              <Icon className="w-full h-full" />
-            </div>
-          )}
-          {label && (
-            <span className="font-sans font-normal text-sm leading-5 text-muted text-center whitespace-nowrap">
-              {label}
-            </span>
-          )}
-        </div>
-      )}
+    <header className={`flex flex-col ${gap} items-center w-full ${paddingTop} ${className}`}>
       <HeadingWithHighlight
         text={heading.text}
         highlighted={heading.highlighted}

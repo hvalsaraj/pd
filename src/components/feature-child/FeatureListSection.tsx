@@ -14,16 +14,28 @@ interface FeatureListSectionProps {
     title: string;
     description: string;
   }>;
+  sectionIndex?: number;
+  sectionTotal?: number;
+  showGapBefore?: boolean;
 }
 
 export default function FeatureListSection({
   heading,
   description,
   features,
+  sectionIndex,
+  sectionTotal,
+  showGapBefore,
 }: FeatureListSectionProps) {
   return (
-    <SectionContainer className="items-center md:items-start px-4 md:px-8 lg:px-12">
-      <div className="flex flex-col gap-4 items-center md:items-start w-full max-w-[557px]">
+    <SectionContainer
+      className="items-center md:items-start"
+      sectionLabel="Features"
+      sectionIndex={sectionIndex}
+      sectionTotal={sectionTotal}
+      showGapBefore={showGapBefore}
+    >
+      <div className="flex flex-col gap-4 items-center md:items-start w-full max-w-[557px] px-4 md:px-8 lg:px-12">
         <HeadingWithHighlight
           text={heading.text}
           highlighted={heading.highlighted}
@@ -36,7 +48,7 @@ export default function FeatureListSection({
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-12 items-start w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-12 items-start w-full px-4 md:px-8 lg:px-12">
         {features.map((feature, index) => (
           <FeatureCard
             key={index}

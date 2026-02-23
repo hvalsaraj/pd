@@ -21,7 +21,7 @@ export default function CaseStudyCard({
   return (
     <Link
       href={`/resources/case-study/${slug}`}
-      className="group bg-card border border-border flex flex-col overflow-hidden rounded-xl hover:border-primary transition-all duration-200 hover:shadow-lg h-full"
+      className="group bg-card border border-border flex flex-col overflow-hidden rounded-xl hover:border-primary transition-all duration-200 h-full"
     >
       {/* Image */}
       <div className="relative w-full h-48 bg-gradient-to-br from-[#5e48f0]/10 to-[#5e48f0]/5 overflow-hidden">

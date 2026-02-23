@@ -20,13 +20,13 @@ export default function Footer() {
 
   const featureLinks = [
     { label: "Phones", href: "/features/phones" },
-    { label: "Reminders", href: "/features/reminders" },
-    { label: "Scheduling", href: "/features/scheduling" },
+    { label: "Appointment Reminders", href: "/features/appointment-reminders" },
+    { label: "Online Scheduling", href: "/features/online-scheduling" },
     { label: "Texting", href: "/features/texting" },
     { label: "Reviews", href: "/features/reviews" },
     { label: "Call Intelligence", href: "/features/call-intelligence" },
     { label: "Billing & Payments", href: "/features/billing-payments" },
-    { label: "Digital Forms", href: "/features/digital-forms" },
+    { label: "Online Forms", href: "/features/online-forms" },
     { label: "Email Marketing", href: "/features/email-marketing" },
     { label: "Mobile App", href: "/features/mobile-app" },
   ];
@@ -148,8 +148,8 @@ export default function Footer() {
                   <NavListItem href="/about" borderBottom className="block py-4 px-6">
                     About
                   </NavListItem>
-                  <NavListItem href="/testimonials" borderBottom className="block py-4 px-6">
-                    Testimonials
+                  <NavListItem href="/reviews" borderBottom className="block py-4 px-6">
+                    Reviews
                   </NavListItem>
                   <NavListItem href="/contact" className="block py-4 px-6">
                     Contact

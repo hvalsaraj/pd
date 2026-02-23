@@ -188,7 +188,12 @@ export default function PricingPage() {
       </div>
 
       {/* Pricing Plans Section */}
-      <SectionContainer className="items-center">
+      <SectionContainer
+        className="items-center"
+        sectionLabel="Pricing Plans"
+        sectionIndex={1}
+        sectionTotal={5}
+      >
         <div className="w-full px-4 lg:px-16">
           <div className="grid grid-cols-1 md:grid-cols-3 max-w-[1200px] mx-auto md:gap-0 gap-y-16 border-x border-border">
             {pricingPlans.map((plan, index) => (
@@ -245,9 +250,14 @@ export default function PricingPage() {
           </div>
         </div>
       </SectionContainer>
-
       {/* All Features Included Section */}
-      <SectionContainer className="items-center">
+      <SectionContainer
+        className="items-center"
+        sectionLabel="All Features Included"
+        sectionIndex={2}
+        sectionTotal={5}
+        showGapBefore
+      >
         <div className="w-full px-4 lg:px-16">
           <div className="flex flex-col gap-10 items-center max-w-6xl mx-auto">
             <div className="flex flex-col gap-4 items-center">
@@ -293,9 +303,14 @@ export default function PricingPage() {
           </div>
         </div>
       </SectionContainer>
-
       {/* Why PracticeDilly Section */}
-      <SectionContainer className="items-center">
+      <SectionContainer
+        className="items-center"
+        sectionLabel="Why PracticeDilly"
+        sectionIndex={3}
+        sectionTotal={5}
+        showGapBefore
+      >
         <div className="w-full px-4 lg:px-16">
           <div className="flex flex-col gap-10 items-center max-w-4xl mx-auto">
             <div className="flex flex-col gap-4 items-center">
@@ -321,20 +336,24 @@ export default function PricingPage() {
           </div>
         </div>
       </SectionContainer>
-
       {/* No Contracts Section */}
       <CTACard
         headingHighlighted="No Contracts"
         headingSuffix=", No Setup Fee"
         description="We want you to be completely satisfied before you commit to making any payments. That's why we offer our service without any setup fees or contracts."
         buttonText="Get Started"
+        showGapBefore
       />
-
       {/* Testimonial Section */}
-      <TestimonialSection />
-
+      <TestimonialSection sectionIndex={4} sectionTotal={5} showGapBefore />
       {/* FAQ Section */}
-      <SectionContainer className="items-start">
+      <SectionContainer
+        className="items-start"
+        sectionLabel="FAQ"
+        sectionIndex={5}
+        sectionTotal={5}
+        showGapBefore
+      >
         <div className="w-full flex flex-col md:flex-row border-t">
           <div className="border-border border-r border-b flex flex-col gap-4 items-start justify-start px-4 md:px-8 lg:px-16 py-8 md:py-10 lg:py-14 relative shrink-0 w-full md:w-1/2">
             <HeadingWithHighlight

@@ -169,7 +169,7 @@ function searchTestimonials(searchTerm: string): SearchResult[] {
       id: testimonial.id,
       title: testimonial.practiceName,
       description: testimonial.quote,
-      url: `/testimonials#${testimonial.id}`,
+      url: `/reviews#${testimonial.id}`,
       metadata: {
         authorName: testimonial.authorName,
         authorTitle: testimonial.authorTitle,

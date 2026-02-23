@@ -7,7 +7,6 @@ import HeadingWithHighlight from "@/common/HeadingWithHighlight";
 import FAQItem from "@/common/FAQItem";
 import Button from "@/common/Button";
 import { Star, MessageCircleHeart, Clock, Headphones, DollarSign, CheckCircle2 } from "lucide-react";
-import GridCard from "@/common/GridCard";
 import GridBackground from "@/components/GridBackground";
 import testimonialsData from "@/data/testimonials.json";
 import HeroPill from "@/common/HeroPill";
@@ -29,7 +28,7 @@ interface WhyChooseItem {
   description: string;
 }
 
-// Testimonial Card Component
+// Review card (data from testimonials.json)
 function TestimonialCard({ practiceName, practiceLogo, quote, rating, authorName, authorTitle, authorImage }: Testimonial) {
   const [logoError, setLogoError] = useState(false);
   const [authorImageError, setAuthorImageError] = useState(false);
@@ -37,28 +36,6 @@ function TestimonialCard({ practiceName, practiceLogo, quote, rating, authorName
   
   return (
     <div className="flex flex-col border-b rounded-none overflow-hidden w-full border-t -mb-px py-2 border-l -ml-px border-border">
-      {/* Practice Logo/Name Section */}
-      {/* <div className="px-6 py-4 border-b border-border bg-background">
-        <div className="flex items-center gap-3">
-          {!logoError ? (
-            <img 
-              src={logoUrl} 
-              alt={practiceName} 
-              className="h-8 w-auto object-contain"
-              onError={() => setLogoError(true)}
-            />
-          ) : (
-            <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center shrink-0">
-              <span className="text-card text-xs font-medium">
-                {practiceName.charAt(0).toUpperCase()}
-              </span>
-            </div>
-          )}
-          <p className="font-sans font-medium text-sm text-foreground">{practiceName}</p>
-        </div>
-      </div> */}
-
-      {/* Rating and Author Section */}
       <div className="px-6 py-4 border-border">
   
         <div className="flex items-center gap-3">
@@ -79,7 +56,6 @@ function TestimonialCard({ practiceName, practiceLogo, quote, rating, authorName
         </div>
       </div>
 
-      {/* Quote Section */}
       <div className="px-6 py-6 flex-1">
       <div className="flex items-center gap-1 mb-2">
           {[...Array(5)].map((_, i) => (
@@ -90,9 +66,6 @@ function TestimonialCard({ practiceName, practiceLogo, quote, rating, authorName
               }`}
             />
           ))}
-          {/* <span className="font-sans font-normal text-sm text-muted ml-1">
-            {rating} out of 5
-          </span> */}
         </div>
         <blockquote className="font-sans font-normal text-base leading-6 text-foreground mb-3">
           "{quote}"
@@ -104,7 +77,7 @@ function TestimonialCard({ practiceName, practiceLogo, quote, rating, authorName
   );
 }
 
-export default function TestimonialsPage() {
+export default function ReviewsPage() {
   const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(0);
 
   const testimonials: Testimonial[] = testimonialsData as Testimonial[];
@@ -155,21 +128,19 @@ export default function TestimonialsPage() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <div className="relative border-b border-border py-20">
-        {/* Grid Background */}
         <GridBackground gridSize={1280/11}  contentWidth={960} contentPadding={64} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 lg:px-16">
           <div className="flex flex-col items-center gap-8 text-center max-w-4xl mx-auto">
-            <HeroPill icon="MessageCircleHeart" text="Testimonials" as="h1" />
+            <HeroPill icon="MessageCircleHeart" text="Reviews" as="h1" />
             <HeadingWithHighlight
-              text="Customer Reviews & "
-              highlighted="Testimonials"
+              text="Customer "
+              highlighted="Reviews"
               as="h2"
             />
             <p className="font-sans text-base leading-6 text-foreground max-w-2xl">
               Dental practices owners and office managers share their stories about why they're passionate about what they do and how PracticeDilly helped them along the way.
             </p>
 
-            {/* CTA Buttons */}
             <div className="flex items-center gap-4 flex-wrap justify-center">
               <Button href="#get-started" variant="primary" className="px-6">
                 Get Started - No Setup Fee!
@@ -182,12 +153,14 @@ export default function TestimonialsPage() {
         </div>
       </div>
 
-      {/* Testimonials Section */}
-      <SectionContainer className="items-start">
+      <SectionContainer
+        className="items-start"
+        sectionLabel="PracticeDilly Reviews"
+        sectionIndex={1}
+        sectionTotal={3}
+      >
         <div className="w-full">
           <SectionHeader
-            icon={MessageCircleHeart}
-            label="PracticeDilly Reviews"
             heading={{
               text: "Stories From Our ",
               highlighted: "Clients",
@@ -196,7 +169,6 @@ export default function TestimonialsPage() {
             className="mb-12"
           />
 
-          {/* Testimonials Grid - Pinterest Style Masonry Layout */}
           <div className="columns-1 md:columns-2 lg:columns-3 column-gap-2 " style={{ columnGap: 0 }}>
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="break-inside-avoid mb-0 border-l">
@@ -207,9 +179,13 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </SectionContainer>
-
-      {/* Why Choose Us Section */}
-      <SectionContainer className="items-center">
+      <SectionContainer
+        className="items-center"
+        sectionLabel="Why Choose Us"
+        sectionIndex={2}
+        sectionTotal={3}
+        showGapBefore
+      >
         <div className="w-full px-4 lg:px-16 items-center">
           <div className="flex flex-col gap-4 items-center mb-12">
             <HeadingWithHighlight
@@ -250,9 +226,13 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </SectionContainer>
-
-      {/* FAQ Section */}
-      <SectionContainer className="items-start">
+      <SectionContainer
+        className="items-start"
+        sectionLabel="FAQ"
+        sectionIndex={3}
+        sectionTotal={3}
+        showGapBefore
+      >
         <div className="w-full flex flex-col md:flex-row border-t">
           <div className="border-border border-r border-b flex flex-col gap-4 items-start justify-start px-4 md:px-8 lg:px-16 py-8 md:py-10 lg:py-14 relative shrink-0 w-full md:w-1/2">
             <HeadingWithHighlight
@@ -268,7 +248,7 @@ export default function TestimonialsPage() {
             {faqItems.map((faq, index) => (
               <FAQItem
                 key={index}
-                id={`faq-testimonials-${index}`}
+                id={`faq-reviews-${index}`}
                 question={faq.question}
                 answer={faq.answer}
                 isOpen={openFAQIndex === index}

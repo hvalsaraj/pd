@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getIcon } from "@/utils/iconMap";
 import { H3 } from "@/common/headings";
+import SectionGap from "./SectionGap";
+import CardGap from "./CardGap";
 
 interface FeatureCardProps {
   icon?: string;
@@ -26,9 +28,9 @@ export default function FeatureCard({
 }: FeatureCardProps) {
   const IconComponent = icon ? getIcon(icon) : null;
 
-  // Simple variant (existing usage)
+  // Simple variant (existing usage); wraps in Link when href is provided
   if (variant === "simple") {
-    return (
+    const cardContent = (
       <div className="bg-card border border-border flex flex-col items-start overflow-clip p-6 rounded-xl shrink-0 w-full h-full hover:border-primary transition-all duration-200">
         <div className="flex flex-col items-start w-full">
           <div className="flex items-center pb-5 pt-0 px-0">
@@ -41,9 +43,10 @@ export default function FeatureCard({
             </div>
           </div>
           <div className="flex items-center justify-start pb-3 pt-0 px-0 w-full">
-            <h3 className="font-sans font-normal leading-6 shrink-0 text-foreground text-base tracking-normal">
+            <H3 className="font-sans font-normal leading-6 shrink-0 text-foreground text-base! tracking-normal">
               {title}
-            </h3>
+            </H3>
+            
           </div>
           <p className="font-sans font-normal leading-5 text-muted text-sm tracking-normal w-full">
             {description}
@@ -52,6 +55,15 @@ export default function FeatureCard({
         
       </div>
     );
+
+    if (href) {
+      return (
+        <Link href={href} className="block w-full h-full cursor-pointer">
+          {cardContent}
+        </Link>
+      );
+    }
+    return cardContent;
   }
 
   // Detailed variant (features page)
@@ -60,7 +72,7 @@ export default function FeatureCard({
       {/* Large Image/Icon Section */}
       {image ? (
         <div 
-          className="w-full h-48 md:h-56 bg-cover bg-center bg-no-repeat border-b"
+          className="w-full min-h-48 md:min-h-56 aspect-square bg-cover bg-center bg-no-repeat border-b"
           style={{ backgroundImage: `url(${image})` }}
         />
       ) : IconComponent ? (
@@ -73,9 +85,9 @@ export default function FeatureCard({
 
       <div className="p-6 pt-2 flex flex-col gap-2 flex-1">
         {/* Category */}
-        {category && (
+        {title && (
           <div className="flex items-center gap-3">
-            <H3 className="text-lg font-medium">{category}</H3>
+            <H3 className="text-lg font-medium">{title}</H3>
           </div>
         )}
 
@@ -85,7 +97,7 @@ export default function FeatureCard({
         </p>
 
         {/* Badges */}
-        {badges && badges.length > 0 && (
+        {/* {badges && badges.length > 0 && (
           <div className="flex flex-wrap gap-2 pt-2">
             {badges.slice(0, 3).map((badge, index) => (
               <span
@@ -96,7 +108,7 @@ export default function FeatureCard({
               </span>
             ))}
           </div>
-        )}
+        )} */}
 
         {/* Link Arrow */}
         {href && (
@@ -106,7 +118,7 @@ export default function FeatureCard({
           </div>
         )}
       </div>
-      <div className="h-16 border-y -mb-px border-border bg-background"></div>
+      <div className="h-20 border-y -mb-px border-border bg-background"><CardGap></CardGap></div>
     </>
   );
 

@@ -5,6 +5,7 @@ interface StatCardProps {
   valueUnit: string;
   description: string;
   explanation: string;
+  className?: string;
 }
 
 export default function StatCard({
@@ -14,9 +15,10 @@ export default function StatCard({
   valueUnit,
   description,
   explanation,
+  className = "",
 }: StatCardProps) {
   return (
-    <article className="flex flex-col gap-9 items-start px-6 py-6 border-b first:border-t md:border-t md:first:border-l-0 md:border-r md:last:border-r-0 border-border flex-1">
+    <article className={`flex flex-col gap-9 items-start px-6 py-6 border-b first:border-t md:border-t md:first:border-l-0 md:border-r md:last:border-r-0 border-border flex-1 ${className}`.trim()}>
       <div className="flex flex-col items-start w-full">
         <div className="flex gap-1.5 items-center w-full">
           <div className="relative shrink-0 w-4 h-4 text-muted" aria-hidden="true">{icon}</div>

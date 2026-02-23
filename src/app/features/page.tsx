@@ -43,14 +43,19 @@ export default function FeaturesPage() {
       </div>
 
       {/* Features Grid */}
-      <SectionContainer className="items-start">
+      <SectionContainer
+        className="items-start"
+        sectionLabel="Features"
+        sectionIndex={1}
+        sectionTotal={2}
+      >
         <div className="w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-[1280px] mx-auto border-t border-border">
             {featuresData.map((feature) => (
               <FeatureCard
                 key={feature.slug}
                 image={feature.hero.image}
-                title={feature.hero.heading.text + (feature.hero.heading.highlighted || "") + (feature.hero.heading.suffix || "")}
+                title={feature.hero.category.text}
                 description={feature.hero.description}
                 href={`/features/${feature.slug}`}
                 category={feature.hero.category.text}
@@ -61,10 +66,9 @@ export default function FeaturesPage() {
           </div>
         </div>
       </SectionContainer>
-
       {/* Reusable Sections from Homepage */}
-      <TestimonialSection />
-      <CTASection />
+      <TestimonialSection sectionIndex={2} sectionTotal={2} showGapBefore />
+      <CTASection showGapBefore={false} />
     </div>
   );
 }

@@ -73,7 +73,13 @@ export default function ResourcesPage() {
       </div>
 
       {/* Resource Cards */}
-      <SectionContainer id="resource-cards" className="items-start">
+      <SectionContainer
+        id="resource-cards"
+        className="items-start"
+        sectionLabel="Resources"
+        sectionIndex={1}
+        sectionTotal={2}
+      >
         <div className="w-full py-16 md:py-20 lg:py-24">
           <div className="grid grid-cols-1 md:grid-cols-3 max-w-[1280px] mx-auto gap-6 md:gap-8 border-border">
             {resourceLinks.map((resource) => {
@@ -82,7 +88,7 @@ export default function ResourcesPage() {
                 <Link
                   key={resource.slug}
                   href={resource.href}
-                  className="group bg-card border border-border flex flex-col gap-6 p-6 rounded-xl hover:border-primary transition-all duration-200 hover:shadow-lg h-full"
+                  className="group bg-card border border-border flex flex-col gap-6 p-6 rounded-xl hover:border-primary transition-all duration-200 h-full"
                 >
                   <div className="flex items-center justify-center w-12 h-12 rounded-[10px] bg-[rgba(94,72,240,0.1)] border border-[rgba(94,72,240,0.25)] shrink-0">
                     {IconComponent && (
@@ -109,9 +115,8 @@ export default function ResourcesPage() {
           </div>
         </div>
       </SectionContainer>
-
-      <TestimonialSection />
-      <CTASection />
+      <TestimonialSection sectionIndex={2} sectionTotal={2} showGapBefore />
+      <CTASection showGapBefore={false} />
     </div>
   );
 }

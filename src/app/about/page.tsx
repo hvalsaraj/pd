@@ -65,7 +65,12 @@ export default function AboutPage() {
       </div>
 
       {/* Story Sections */}
-      <SectionContainer className="items-center">
+      <SectionContainer
+        className="items-center"
+        sectionLabel="Our Journey"
+        sectionIndex={1}
+        sectionTotal={5}
+      >
         <div className="w-full px-4 lg:px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-[37px] items-start w-full max-w-6xl mx-auto">
             {storySections.map((section, index) => {
@@ -109,9 +114,14 @@ export default function AboutPage() {
           </div>
         </div>
       </SectionContainer>
-
       {/* CEO Quote Section */}
-      <SectionContainer className="items-center">
+      <SectionContainer
+        className="items-center"
+        sectionLabel="CEO Quote"
+        sectionIndex={2}
+        sectionTotal={5}
+        showGapBefore
+      >
         <div className="w-full px-4 lg:px-16">
           <div className="flex flex-col gap-8 items-center max-w-4xl mx-auto">
             <div className="border border-border rounded-2xl bg-card p-8 md:p-12 w-full">
@@ -135,9 +145,14 @@ export default function AboutPage() {
           </div>
         </div>
       </SectionContainer>
-
       {/* Product Journey Timeline */}
-      <SectionContainer className="items-center">
+      <SectionContainer
+        className="items-center"
+        sectionLabel="Product Journey"
+        sectionIndex={3}
+        sectionTotal={5}
+        showGapBefore
+      >
         <div className="w-full px-4 lg:px-16">
           <div className="flex flex-col gap-10 items-center max-w-6xl mx-auto">
             <div className="flex flex-col gap-4 items-center">
@@ -154,9 +169,14 @@ export default function AboutPage() {
           </div>
         </div>
       </SectionContainer>
-
       {/* California Section */}
-      <SectionContainer className="items-center">
+      <SectionContainer
+        className="items-center"
+        sectionLabel="California"
+        sectionIndex={4}
+        sectionTotal={5}
+        showGapBefore
+      >
         <div className="w-full px-4 lg:px-16">
           <div className="flex flex-col gap-6 items-center max-w-4xl mx-auto">
             <div className="border border-border rounded-xl bg-card p-8 md:p-12 w-full text-center">
@@ -175,9 +195,8 @@ export default function AboutPage() {
           </div>
         </div>
       </SectionContainer>
-
       {/* Testimonial Section */}
-      <TestimonialSection />
+      <TestimonialSection sectionIndex={5} sectionTotal={5} showGapBefore />
 
       {/* CTA Section */}
       <CTACard

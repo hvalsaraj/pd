@@ -53,6 +53,27 @@ export function getAllDemoVideos(): Array<
   return list;
 }
 
+/** Get videos for the given category ids, in category order then video order. Ignores unknown ids. */
+export function getVideosByCategoryIds(
+  categoryIds: string[]
+): Array<DemoVideoItem & { categoryId: string; categoryName: string }> {
+  const list: Array<
+    DemoVideoItem & { categoryId: string; categoryName: string }
+  > = [];
+  for (const catId of categoryIds) {
+    const cat = data.categories.find((c) => c.id === catId);
+    if (!cat) continue;
+    for (const video of cat.videos) {
+      list.push({
+        ...video,
+        categoryId: cat.id,
+        categoryName: cat.name,
+      });
+    }
+  }
+  return list;
+}
+
 /** Get a single video by slug, with category info. */
 export function getDemoVideoBySlug(
   slug: string

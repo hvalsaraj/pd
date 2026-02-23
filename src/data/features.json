@@ -11,7 +11,7 @@
         "highlighted": "Phone System ",
         "suffix": "for Dental Practices"
       },
-      "image":"/feature-images/phones.png",
+      "image":"/feature-heros/phones.png",
       "description": "Transform your dental office phone system with AI-powered call handling, intelligent routing, and real-time analytics. Every call captured, every patient impressed.",
       "cta": {
         "text": "Get Started",
@@ -182,18 +182,18 @@
     }
   },
   {
-    "slug": "reminders",
+    "slug": "appointment-reminders",
     "hero": {
       "category": {
         "icon": "Bell",
-        "text": "Reminders"
+        "text": "Appointment Reminders"
       },
       "heading": {
         "text": "Cut No-Shows by 80%. ",
         "highlighted": "Automatically.",
         "suffix": ""
       },
-      "image":"/feature-images/reminders.png",
+      "image":"/feature-heros/appointment-reminders.png",
       "description": "Smart appointment reminders that reach patients at the right time, through the right channel. Confirmations flow back automatically.",
       "cta": {
         "text": "Get Started",
@@ -208,7 +208,7 @@
     },
     "list": {
       "heading": {
-        "text": "Reminders That ",
+        "text": "Appointment Reminders That ",
         "highlighted": "Actually Work",
         "suffix": ""
       },
@@ -302,6 +302,14 @@
         }
       ]
     },
+    "demoVideos": {
+      "heading": {
+        "text": "See It ",
+        "highlighted": "In Action"
+      },
+      "description": "Watch short demos of appointment reminders and recall outreach.",
+      "categoryIds": ["appointment-reminders", "missed-appointments"]
+    },
     "faq": {
       "heading": {
         "text": "Frequently Asked ",
@@ -358,23 +366,23 @@
         "waitlist management",
         "two-way confirmation"
       ],
-      "ogImage": "/og-images/reminders-feature.jpg",
-      "canonicalUrl": "https://practicedilly.com/features/reminders"
+      "ogImage": "/og-images/appointment-reminders-feature.jpg",
+      "canonicalUrl": "https://practicedilly.com/features/appointment-reminders"
     }
   },
   {
-    "slug": "scheduling",
+    "slug": "online-scheduling",
     "hero": {
       "category": {
         "icon": "CalendarCheck",
-        "text": "Scheduling"
+        "text": "Online Scheduling"
       },
       "heading": {
         "text": "Patients Book. You ",
         "highlighted": "Focus on Care.",
         "suffix": ""
       },
-      "image":"/feature-images/scheduling.png",
+      "image":"/feature-heros/scheduling.png",
       "description": "Intelligent online scheduling that fills your calendar 24/7, syncs with your PMS, and respects your booking rules.",
       "cta": {
         "text": "Get Started",
@@ -389,7 +397,7 @@
     },
     "list": {
       "heading": {
-        "text": "Scheduling Built for ",
+        "text": "Online Scheduling Built for ",
         "highlighted": "Healthcare",
         "suffix": ""
       },
@@ -430,7 +438,7 @@
     "benefits": {
       "heading": {
         "text": "Why Practices Love ",
-        "highlighted": "Our Scheduling",
+        "highlighted": "Our Online Scheduling",
         "suffix": ""
       },
       "description": "Transform how patients discover and book your services.",
@@ -540,7 +548,7 @@
         "appointment management"
       ],
       "ogImage": "/og-images/scheduling-feature.jpg",
-      "canonicalUrl": "https://practicedilly.com/features/scheduling"
+      "canonicalUrl": "https://practicedilly.com/features/online-scheduling"
     }
   },
   {
@@ -555,7 +563,7 @@
         "highlighted": "Get Answers.",
         "suffix": ""
       },
-      "image":"/feature-images/texting.png",
+      "image":"/feature-heros/two-way-texting.png",
       "description": "HIPAA-compliant two-way texting that feels as natural as messaging a friend. Because that's how your patients want to communicate.",
       "cta": {
         "text": "Get Started",
@@ -664,6 +672,14 @@
         }
       ]
     },
+    "demoVideos": {
+      "heading": {
+        "text": "See It ",
+        "highlighted": "In Action"
+      },
+      "description": "Watch demos of two-way texting and campaigns.",
+      "categoryIds": ["two-way-texting", "campaigns-promotions"]
+    },
     "faq": {
       "heading": {
         "text": "Frequently Asked ",
@@ -736,7 +752,7 @@
         "highlighted": "Automatically.",
         "suffix": ""
       },
-      "image":"/feature-images/reviews.png",
+      "image":"/feature-heros/reviews.png",
       "description": "Turn happy patients into vocal advocates. Catch issues before they become public. Grow your online presence effortlessly.",
       "cta": {
         "text": "Get Started",
@@ -845,6 +861,14 @@
         }
       ]
     },
+    "demoVideos": {
+      "heading": {
+        "text": "See It ",
+        "highlighted": "In Action"
+      },
+      "description": "Watch demos of online review requests and automation.",
+      "categoryIds": ["online-reviews"]
+    },
     "faq": {
       "heading": {
         "text": "Frequently Asked ",
@@ -917,7 +941,7 @@
         "highlighted": "Insight.",
         "suffix": ""
       },
-      "image":"/feature-images/call-intelligence.png",
+      "image":"/feature-heros/call-intelligence.png",
       "description": "AI listens to every conversation, transcribes instantly, and surfaces the insights that grow your practice.",
       "cta": {
         "text": "Get Started",
@@ -1094,7 +1118,7 @@
         "highlighted": "Stress Less.",
         "suffix": ""
       },
-      "image":"/feature-images/billing-payments.png",
+      "image":"/feature-heros/text-to-pay.png",
       "description": "Modern payment experiences patients love. Digital invoices, text-to-pay, and flexible plans that improve cash flow.",
       "cta": {
         "text": "Get Started",
@@ -1203,6 +1227,14 @@
         }
       ]
     },
+    "demoVideos": {
+      "heading": {
+        "text": "See It ",
+        "highlighted": "In Action"
+      },
+      "description": "Watch how to send payment requests and collect from patients.",
+      "categoryIds": ["text-to-pay"]
+    },
     "faq": {
       "heading": {
         "text": "Frequently Asked ",
@@ -1265,18 +1297,18 @@
     }
   },
   {
-    "slug": "digital-forms",
+    "slug": "online-forms",
     "hero": {
       "category": {
         "icon": "Clipboard",
-        "text": "Digital Forms"
+        "text": "Online Forms"
       },
       "heading": {
         "text": "Ditch the Clipboard. Go ",
         "highlighted": "Digital.",
         "suffix": ""
       },
-      "image":"/feature-images/digital-forms.png",
+      "image":"/feature-heros/digital-forms.png",
       "description": "Beautiful, mobile-friendly intake forms that patients actually enjoy completing. Data syncs automatically to your PMS.",
       "cta": {
         "text": "Get Started",
@@ -1359,7 +1391,7 @@
       "heading": {
         "text": "Why Healthcare ",
         "highlighted": "Practices Choose PracticeDilly",
-        "suffix": " for Digital Patient Forms"
+        "suffix": " for Online Patient Forms"
       },
       "description": "Clipboards and paper forms are relics of a pre-digital era. They create work for staff, frustrate patients, and introduce errors into your records. PracticeDilly's digital patient intake forms transform the registration experience—letting patients complete paperwork on their own devices before they arrive, with data flowing directly into your practice management system.",
       "items": [
@@ -1385,12 +1417,20 @@
         }
       ]
     },
+    "demoVideos": {
+      "heading": {
+        "text": "See It ",
+        "highlighted": "In Action"
+      },
+      "description": "Watch demos of paperless forms and pre-screening.",
+      "categoryIds": ["paperless-forms"]
+    },
     "faq": {
       "heading": {
         "text": "Frequently Asked ",
         "highlighted": "Questions"
       },
-      "description": "Common questions about PracticeDilly's digital patient forms",
+      "description": "Common questions about PracticeDilly's online patient forms",
       "items": [
         {
           "question": "Are digital signatures legally valid for consent forms?",
@@ -1427,13 +1467,13 @@
       ]
     },
     "seo": {
-      "title": "Digital Patient Forms & Paperless Intake | PracticeDilly",
+      "title": "Online Patient Forms & Paperless Intake | PracticeDilly",
       "description": "Beautiful, mobile-friendly intake forms that patients complete before appointments. PMS integration, e-signatures, smart form logic. Save 15+ minutes per patient. HIPAA compliant.",
       "keywords": [
-        "digital forms",
+        "online forms",
         "patient intake forms",
         "paperless forms",
-        "digital patient forms",
+        "online patient forms",
         "e-signatures",
         "patient registration",
         "intake forms dental",
@@ -1442,7 +1482,7 @@
         "paperless office"
       ],
       "ogImage": "/og-images/digital-forms-feature.jpg",
-      "canonicalUrl": "https://practicedilly.com/features/digital-forms"
+      "canonicalUrl": "https://practicedilly.com/features/online-forms"
     }
   },
   {
@@ -1457,7 +1497,7 @@
         "highlighted": "Runs Itself.",
         "suffix": ""
       },
-      "image":"/feature-images/email-marketing.png",
+      "image":"/feature-heros/campaigns-and-promotions.png",
       "description": "Keep patients engaged with beautiful, automated emails. Reactivate lost patients. Fill your schedule. All on autopilot.",
       "cta": {
         "text": "Get Started",
@@ -1566,6 +1606,14 @@
         }
       ]
     },
+    "demoVideos": {
+      "heading": {
+        "text": "See It ",
+        "highlighted": "In Action"
+      },
+      "description": "Watch demos of email campaigns and templates.",
+      "categoryIds": ["campaigns-promotions"]
+    },
     "faq": {
       "heading": {
         "text": "Frequently Asked ",
@@ -1638,7 +1686,7 @@
         "highlighted": "Pocket.",
         "suffix": ""
       },
-      "image":"/feature-images/mobile-app.png",
+      "image":"/feature-heros/mobile-app.png",
       "description": "A beautiful, branded mobile app that puts your practice on patients' home screens. Booking, messaging, payments—everything they need.",
       "cta": {
         "text": "Get Started",
@@ -1746,6 +1794,14 @@
           "description": "PracticeDilly publishes your app in the Apple App Store and Google Play Store under your practice's name. Patients search, find, and download your branded app just like any other. You don't need developers, designers, or app store accounts. We handle the technical side while you focus on patient care. Updates and new features roll out automatically."
         }
       ]
+    },
+    "demoVideos": {
+      "heading": {
+        "text": "See It ",
+        "highlighted": "In Action"
+      },
+      "description": "Watch how to use the PracticeDilly mobile app.",
+      "categoryIds": ["mobile-app"]
     },
     "faq": {
       "heading": {

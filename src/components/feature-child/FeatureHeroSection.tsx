@@ -33,7 +33,7 @@ export default function FeatureHeroSection({
   image
 }: FeatureHeroSectionProps) {
   return (
-    <div className="relative flex min-h-[600px] md:min-h-[80vh] items-center justify-center w-full py-12 md:py-0 border-b">
+    <div className="relative flex min-h-[600px] md:min-h-[80vh] items-center justify-center w-full py-12 md:py-0">
       {/* Grid Background */}
       <GridBackground gridSize={1280 / 9} contentWidth={1280} contentPadding={64} />
 
@@ -84,8 +84,8 @@ export default function FeatureHeroSection({
             <Image
               src={image || ""}
               alt={heading.text}
-              width={600}
-              height={600}
+              width={592}
+              height={592}
               className="w-full h-auto max-w-full"
             />
           </div>

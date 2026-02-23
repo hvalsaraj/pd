@@ -69,8 +69,6 @@ function SearchContent() {
         <div className="relative z-10 max-w-[1112px] mx-auto px-4 py-16">
           <div className="flex flex-col items-center gap-8 text-center max-w-4xl mx-auto">
             <SectionHeader
-              icon={Search}
-              label="Search"
               heading={{
                 text: query ? `Search Results for "${query}"` : "Search",
                 highlighted: "",
@@ -78,7 +76,7 @@ function SearchContent() {
               description={
                 query
                   ? `Found ${results.total} result${results.total !== 1 ? "s" : ""}`
-                  : "Search across our articles, features, integrations, and testimonials"
+                  : "Search across our articles, features, integrations, and reviews"
               }
               headingAs="h1"
             />
@@ -111,7 +109,10 @@ function SearchContent() {
         <div className="pb-20">
           {/* Articles Section */}
           {results.blogs.length > 0 && (
-            <SectionContainer className="items-start px-4 md:px-8 lg:px-16">
+            <SectionContainer
+              className="items-start px-4 md:px-8 lg:px-16"
+              sectionLabel="Articles"
+            >
               <div className="w-full">
                 <div className="flex items-center gap-3 mb-8">
                   <BookOpen className="h-6 w-6 text-primary" />
@@ -137,10 +138,12 @@ function SearchContent() {
               </div>
             </SectionContainer>
           )}
-
-          {/* Features Section */}
           {results.features.length > 0 && (
-            <SectionContainer className="items-start px-4 md:px-8 lg:px-16">
+            <SectionContainer
+              className="items-start px-4 md:px-8 lg:px-16"
+              sectionLabel="Features"
+              showGapBefore={results.blogs.length > 0}
+            >
               <div className="w-full">
                 <div className="flex items-center gap-3 mb-8">
                   <Zap className="h-6 w-6 text-primary" />
@@ -165,10 +168,12 @@ function SearchContent() {
               </div>
             </SectionContainer>
           )}
-
-          {/* Integrations Section */}
           {results.integrations.length > 0 && (
-            <SectionContainer className="items-start px-4 md:px-8 lg:px-16">
+            <SectionContainer
+              className="items-start px-4 md:px-8 lg:px-16"
+              sectionLabel="Integrations"
+              showGapBefore={results.blogs.length > 0 || results.features.length > 0}
+            >
               <div className="w-full">
                 <div className="flex items-center gap-3 mb-8">
                   <Plug className="h-6 w-6 text-primary" />
@@ -181,7 +186,7 @@ function SearchContent() {
                     <Link
                       key={result.id}
                       href={result.url}
-                      className="group bg-card border border-border flex flex-col overflow-hidden rounded-xl hover:border-primary transition-all duration-200 hover:shadow-lg h-full"
+                      className="group bg-card border border-border flex flex-col overflow-hidden rounded-xl hover:border-primary transition-all duration-200 h-full"
                     >
                       <div className="p-6 flex flex-col gap-4 flex-1">
                         <div className="flex items-center gap-3">
@@ -204,15 +209,17 @@ function SearchContent() {
               </div>
             </SectionContainer>
           )}
-
-          {/* Testimonials Section */}
           {results.testimonials.length > 0 && (
-            <SectionContainer className="items-start px-4 md:px-8 lg:px-16">
+            <SectionContainer
+              className="items-start px-4 md:px-8 lg:px-16"
+              sectionLabel="Testimonials"
+              showGapBefore={results.blogs.length > 0 || results.features.length > 0 || results.integrations.length > 0}
+            >
               <div className="w-full">
                 <div className="flex items-center gap-3 mb-8">
                   <MessageCircleHeart className="h-6 w-6 text-primary" />
                   <h2 className="text-2xl font-heading font-semibold text-foreground">
-                    Testimonials ({results.testimonials.length})
+                    Reviews ({results.testimonials.length})
                   </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-[37px] max-w-[1280px] mx-auto border-t border-border pt-8">
@@ -222,7 +229,7 @@ function SearchContent() {
                       <Link
                         key={result.id}
                         href={result.url}
-                        className="group bg-card border border-border rounded-xl overflow-hidden hover:border-primary transition-all duration-200 hover:shadow-lg flex flex-col"
+                        className="group bg-card border border-border rounded-xl overflow-hidden hover:border-primary transition-all duration-200 flex flex-col"
                       >
                         <div className="p-6 flex flex-col gap-4 flex-1">
                           {/* Author Info */}
@@ -269,7 +276,7 @@ function SearchContent() {
 
                           {/* Link */}
                           <div className="flex items-center gap-2 text-primary font-medium text-sm mt-auto pt-2">
-                            <span>Read full testimonial</span>
+                            <span>Read full review</span>
                             <span className="group-hover:translate-x-1 transition-transform">→</span>
                           </div>
                         </div>
@@ -318,7 +325,7 @@ function SearchContent() {
         <SectionContainer className="items-center px-4 md:px-8 lg:px-16">
           <div className="w-full max-w-2xl mx-auto text-center py-20">
             <p className="font-sans text-base text-muted">
-              Enter a search term above to find articles, features, integrations, and testimonials.
+              Enter a search term above to find articles, features, integrations, and reviews.
             </p>
           </div>
         </SectionContainer>
@@ -342,13 +349,11 @@ export default function SearchPage() {
             <div className="relative z-10 max-w-[1112px] mx-auto px-4 py-16">
               <div className="flex flex-col items-center gap-8 text-center max-w-4xl mx-auto">
                 <SectionHeader
-                  icon={Search}
-                  label="Search"
                   heading={{
                     text: "Search",
                     highlighted: "",
                   }}
-                  description="Search across our articles, features, integrations, and testimonials"
+                  description="Search across our articles, features, integrations, and reviews"
                 />
               </div>
             </div>

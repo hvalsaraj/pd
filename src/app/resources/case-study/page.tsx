@@ -45,7 +45,12 @@ export default function CaseStudyIndexPage() {
 
       {/* Featured Case Study */}
       {featuredCaseStudy && (
-        <SectionContainer className="items-start px-4 md:px-8 lg:px-16 py-12">
+        <SectionContainer
+          className="items-start px-4 md:px-8 lg:px-16 py-12"
+          sectionLabel="Featured"
+          sectionIndex={1}
+          sectionTotal={2}
+        >
           <div className="w-full max-w-[1280px] mx-auto">
             <div className="flex flex-col gap-6 mb-8">
               <h2 className="text-2xl font-heading font-semibold text-foreground">Featured</h2>
@@ -62,9 +67,14 @@ export default function CaseStudyIndexPage() {
           </div>
         </SectionContainer>
       )}
-
       {/* Recent Case Studies */}
-      <SectionContainer className="items-start px-4 md:px-8 lg:px-16 border-t border-border">
+      <SectionContainer
+        className="items-start px-4 md:px-8 lg:px-16 border-t border-border"
+        sectionLabel="Recent Case Studies"
+        sectionIndex={2}
+        sectionTotal={2}
+        showGapBefore={!!featuredCaseStudy}
+      >
         <div className="w-full max-w-[1280px] mx-auto">
           <div className="flex flex-col gap-6 mb-8 pt-12">
             <h2 className="text-2xl font-heading font-semibold text-foreground">Recent Case Studies</h2>

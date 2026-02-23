@@ -62,7 +62,12 @@ export default function DemoVideosPage() {
       </div>
 
       {/* Video categories */}
-      <SectionContainer className="px-4 lg:px-16">
+      <SectionContainer
+        className="px-4 lg:px-16"
+        sectionLabel="Demo Videos"
+        sectionIndex={1}
+        sectionTotal={1}
+      >
         <div className="flex flex-col gap-16">
           {categories.map((category) => (
             <div key={category.id} id={category.id} className="flex flex-col gap-6 scroll-mt-24">

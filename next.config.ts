@@ -8,18 +8,22 @@ const legacyRedirects: { source: string; destination: string; permanent: boolean
   // --- Main / static pages ---
   { source: "/pricing.html", destination: "/pricing", permanent: true },
   { source: "/about-us.html", destination: "/about", permanent: true },
-  { source: "/testimonials.html", destination: "/testimonials", permanent: true },
+  { source: "/testimonials.html", destination: "/reviews", permanent: true },
+  { source: "/testimonials", destination: "/reviews", permanent: true },
 
   // --- Feature pages (old .html → /features/[slug]) ---
   { source: "/two-way-texting.html", destination: "/features/texting", permanent: true },
-  { source: "/dental-appointment-reminder-software.html", destination: "/features/reminders", permanent: true },
+  { source: "/dental-appointment-reminder-software.html", destination: "/features/appointment-reminders", permanent: true },
   { source: "/campaigns-and-promotions.html", destination: "/features/email-marketing", permanent: true },
   { source: "/dental-reputation-management-software.html", destination: "/features/reviews", permanent: true },
   { source: "/dental-mobile-app.html", destination: "/features/mobile-app", permanent: true },
-  { source: "/automated-recalls.html", destination: "/features/reminders", permanent: true },
-  { source: "/paperless-forms.html", destination: "/features/digital-forms", permanent: true },
+  { source: "/automated-recalls.html", destination: "/features/appointment-reminders", permanent: true },
+  { source: "/paperless-forms.html", destination: "/features/online-forms", permanent: true },
+  { source: "/features/scheduling", destination: "/features/online-scheduling", permanent: true },
+  { source: "/features/digital-forms", destination: "/features/online-forms", permanent: true },
   { source: "/text-to-pay.html", destination: "/features/billing-payments", permanent: true },
-  { source: "/dental-insurance-verifications.html", destination: "/features/reminders", permanent: true },
+  { source: "/dental-insurance-verifications.html", destination: "/features/appointment-reminders", permanent: true },
+  { source: "/features/reminders", destination: "/features/appointment-reminders", permanent: true },
 
   // --- Integration / "best companion" pages ---
   { source: "/best-companion-for-dentrix-users.html", destination: "/integrations/dentrix", permanent: true },
@@ -188,9 +192,52 @@ const legacyRedirects: { source: string; destination: string; permanent: boolean
   { source: "/case-study/", destination: "/resources/case-study", permanent: true },
 ];
 
+const APP_BASE = "https://app.practicedilly.com";
+
+/**
+ * 307 (temporary) redirects from marketing site to app subdomain.
+ * Preserves path: e.g. /services/foo → https://app.practicedilly.com/services/foo
+ */
+const appRedirects: { source: string; destination: string; permanent: false }[] = [
+  { source: "/services", destination: `${APP_BASE}/services`, permanent: false },
+  { source: "/services/:path*", destination: `${APP_BASE}/services/:path*`, permanent: false },
+  { source: "/email", destination: `${APP_BASE}/email`, permanent: false },
+  { source: "/email/:path*", destination: `${APP_BASE}/email/:path*`, permanent: false },
+  { source: "/s/c", destination: `${APP_BASE}/s/c`, permanent: false },
+  { source: "/s/c/:path*", destination: `${APP_BASE}/s/c/:path*`, permanent: false },
+  { source: "/form", destination: `${APP_BASE}/form`, permanent: false },
+  { source: "/form/:path*", destination: `${APP_BASE}/form/:path*`, permanent: false },
+  { source: "/l", destination: `${APP_BASE}/l`, permanent: false },
+  { source: "/l/:path*", destination: `${APP_BASE}/l/:path*`, permanent: false },
+  { source: "/d", destination: `${APP_BASE}/d`, permanent: false },
+  { source: "/d/:path*", destination: `${APP_BASE}/d/:path*`, permanent: false },
+  { source: "/review", destination: `${APP_BASE}/review`, permanent: false },
+  { source: "/review/:path*", destination: `${APP_BASE}/review/:path*`, permanent: false },
+  { source: "/pay", destination: `${APP_BASE}/pay`, permanent: false },
+  { source: "/pay/:path*", destination: `${APP_BASE}/pay/:path*`, permanent: false },
+  { source: "/checkout", destination: `${APP_BASE}/checkout`, permanent: false },
+  { source: "/checkout/:path*", destination: `${APP_BASE}/checkout/:path*`, permanent: false },
+  { source: "/biz", destination: `${APP_BASE}/biz`, permanent: false },
+  { source: "/biz/:path*", destination: `${APP_BASE}/biz/:path*`, permanent: false },
+  { source: "/online", destination: `${APP_BASE}/online`, permanent: false },
+  { source: "/online/:path*", destination: `${APP_BASE}/online/:path*`, permanent: false },
+  { source: "/forms", destination: `${APP_BASE}/forms`, permanent: false },
+  { source: "/forms/:path*", destination: `${APP_BASE}/forms/:path*`, permanent: false },
+  { source: "/f", destination: `${APP_BASE}/f`, permanent: false },
+  { source: "/f/:path*", destination: `${APP_BASE}/f/:path*`, permanent: false },
+  { source: "/appointment-request", destination: `${APP_BASE}/appointment-request`, permanent: false },
+  { source: "/appointment-request/:path*", destination: `${APP_BASE}/appointment-request/:path*`, permanent: false },
+  { source: "/onboarding", destination: `${APP_BASE}/onboarding`, permanent: false },
+  { source: "/onboarding/:path*", destination: `${APP_BASE}/onboarding/:path*`, permanent: false },
+  { source: "/email-campaign", destination: `${APP_BASE}/email-campaign`, permanent: false },
+  { source: "/email-campaign/:path*", destination: `${APP_BASE}/email-campaign/:path*`, permanent: false },
+  { source: "/recall-email", destination: `${APP_BASE}/recall-email`, permanent: false },
+  { source: "/recall-email/:path*", destination: `${APP_BASE}/recall-email/:path*`, permanent: false },
+];
+
 const nextConfig: NextConfig = {
   async redirects() {
-    return legacyRedirects;
+    return [...legacyRedirects, ...appRedirects];
   },
 };
 

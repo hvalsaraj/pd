@@ -102,9 +102,9 @@ export default async function CaseStudySlugPage({ params }: CaseStudyPageProps) 
             </div>
 
             {/* Title */}
-            <H1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground leading-tight">
-              {caseStudy.title}
-            </H1>
+            <HeadingWithHighlight text={caseStudy.title} className="!text-4xl !md:text-5xl !lg:text-6xl font-heading font-bold text-foreground !leading-tight" as="h1" />
+           
+           
 
             {/* Meta Info */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-sm text-muted">
@@ -133,10 +133,10 @@ export default async function CaseStudySlugPage({ params }: CaseStudyPageProps) 
 
           {/* Stats Section (if available) */}
           {caseStudy.stats && caseStudy.stats.length > 0 && (
-            <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 p-6 bg-card border border-border rounded-xl list-none" aria-label="Key results">
+            <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 list-none" aria-label="Key results">
               {caseStudy.stats.map((stat, index) => (
-                <li key={index} className="flex flex-col items-center text-center">
-                  <p className="text-3xl md:text-4xl font-heading font-bold text-primary mb-2 m-0">
+                <li key={index} className="flex flex-col items-center text-center p-6 bg-card border border-border">
+                  <p className="text-3xl md:text-4xl font-heading font-medium text-primary mb-2 m-0">
                     {stat.value}
                   </p>
                   <p className="text-sm font-sans text-muted m-0">
@@ -157,7 +157,8 @@ export default async function CaseStudySlugPage({ params }: CaseStudyPageProps) 
                   <HeadingWithHighlight
                     key={index}
                     text={headingText}
-                    className="text-2xl font-heading font-semibold text-foreground mt-8 mb-4"
+                    className="!text-3xl !leading-tight font-heading font-semibold text-foreground mt-8 mb-4"
+                    as="h2"
                   />
                 );
               }
@@ -168,7 +169,7 @@ export default async function CaseStudySlugPage({ params }: CaseStudyPageProps) 
                 return (
                   <H3
                     key={index}
-                    className="text-xl font-heading font-semibold text-foreground mt-6 mb-3"
+                    className="!text-2xl !leading-tight font-heading font-semibold text-foreground mt-6 mb-3"
                   >
                     {headingText}
                   </H3>

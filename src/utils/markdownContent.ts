@@ -1,6 +1,6 @@
 /**
  * Builds markdown content for agent/LLM consumption when Accept: text/markdown.
- * Full content for all pages (home, about, contact, pricing, testimonials, legal, etc.).
+ * Full content for all pages (home, about, contact, pricing, reviews, legal, etc.).
  */
 
 import featuresData from "@/data/features.json";
@@ -42,7 +42,7 @@ function buildHomeMarkdown(): string {
   (testimonialsData as TestimonialItem[]).forEach((t) => {
     md += `- **${t.authorName}** (${t.practiceName}): "${t.quote}"\n`;
   });
-  md += `\n${link("/testimonials", p.testimonialsSection.cta)}\n\n`;
+  md += `\n${link("/reviews", p.testimonialsSection.cta)}\n\n`;
 
   md += `## ${p.integrationsSection.heading}\n\n${p.integrationsSection.description}\n\n`;
   p.integrationsSection.integrations.forEach((i) => {
@@ -213,7 +213,7 @@ function buildTestimonialsMarkdown(): string {
 function buildSearchMarkdown(): string {
   const p = (pagesData as PagesData).search;
   let md = `# ${p.heading} | PracticeDilly\n\n${p.description}\n\n`;
-  md += `Use the search on our website to find articles, features, integrations, and testimonials.\n\n`;
+  md += `Use the search on our website to find articles, features, integrations, and reviews.\n\n`;
   md += `[Home](${BASE}) | [Articles](${BASE}/resources/article) | [Features](${BASE}/features) | [Integrations](${BASE}/integrations)\n`;
   return md;
 }
@@ -403,7 +403,7 @@ export function getMarkdownForPath(path: string): string | null {
       return buildContactMarkdown();
     case "/pricing":
       return buildPricingMarkdown();
-    case "/testimonials":
+    case "/reviews":
       return buildTestimonialsMarkdown();
     case "/search":
       return buildSearchMarkdown();

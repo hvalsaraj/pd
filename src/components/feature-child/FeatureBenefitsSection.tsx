@@ -14,15 +14,27 @@ interface FeatureBenefitsSectionProps {
     title: string;
     description: string;
   }>;
+  sectionIndex?: number;
+  sectionTotal?: number;
+  showGapBefore?: boolean;
 }
 
 export default function FeatureBenefitsSection({
   heading,
   description,
   items,
+  sectionIndex,
+  sectionTotal,
+  showGapBefore,
 }: FeatureBenefitsSectionProps) {
   return (
-    <SectionContainer className="items-center md:items-start border-t">
+    <SectionContainer
+      className="items-center md:items-start"
+      sectionLabel="Benefits"
+      sectionIndex={sectionIndex}
+      sectionTotal={sectionTotal}
+      showGapBefore={showGapBefore}
+    >
       <div className="flex flex-col gap-4 items-center md:items-start px-4 md:px-8 lg:px-12 py-6 md:py-12 lg:py-16 w-full md:max-w-1/2">
         <HeadingWithHighlight
           text={heading.text}

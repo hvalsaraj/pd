@@ -6,7 +6,11 @@ import { getIcon } from "@/utils/iconMap";
 import { Phone, MessageSquare, Mail, Voicemail, Workflow, Check } from "lucide-react";
 import Link from "next/link";
 
-export default function FeaturesShowcaseSection() {
+interface FeaturesShowcaseSectionProps {
+  showGapBefore?: boolean;
+}
+
+export default function FeaturesShowcaseSection({ showGapBefore }: FeaturesShowcaseSectionProps = {}) {
   const features = [
     {
       icon: "Phone",
@@ -83,15 +87,21 @@ export default function FeaturesShowcaseSection() {
   };
 
   return (
-    <SectionContainer className="items-start">
+    <SectionContainer
+      className="items-start"
+      sectionLabel="Features"
+      sectionIndex={5}
+      sectionTotal={7}
+      showGapBefore={showGapBefore}
+    >
       <div className="w-full">
         <div className="flex flex-col gap-10 items-center mb-10">
           <SectionHeader
             heading={{
-              text: "See How We Help You Automate Your ",
+              text: "Efficiently Automate Your ",
               highlighted: "Front Office",
             }}
-            description="Comprehensive tools designed to modernize every aspect of your practice management."
+            description="PracticeDilly provides comprehensive tools designed to automate and modernize every aspect of your practice management."
             className="max-w-[600px]"
           />
         </div>
@@ -139,24 +149,24 @@ export default function FeaturesShowcaseSection() {
         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto mb-16">
           <div className="bg-card border border-border rounded-xl p-6 flex flex-col gap-4 hover:border-primary transition-colors">
             <H3>
-              Scheduling
+              Online Scheduling
             </H3>
             <p className="font-sans font-normal text-sm leading-5 text-muted">
               Online booking, recalls, and waitlists that keep your chairs full without the back-and-forth calls
             </p>
             <button className="font-sans font-medium text-sm text-primary hover:underline text-left">
-              See Scheduling →
+              See Online Scheduling →
             </button>
           </div>
           <div className="bg-card border border-border rounded-xl p-6 flex flex-col gap-4 hover:border-primary transition-colors">
             <H3>
-              Forms
+              Online Forms
             </H3>
             <p className="font-sans font-normal text-sm leading-5 text-muted">
               Calls, texts, and emails in a single inbox with templates and campaigns your whole team can use
             </p>
             <button className="font-sans font-medium text-sm text-primary hover:underline text-left">
-              See Forms →
+              See Online Forms →
             </button>
           </div>
           <div className="bg-card border border-border rounded-xl p-6 flex flex-col gap-4 hover:border-primary transition-colors">

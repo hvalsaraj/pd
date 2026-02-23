@@ -25,7 +25,7 @@
         "No contracts",
         "30-day free trial"
       ],
-      "image": "/integration-hero/dentrix.png",
+      "image": "/integration-heroes/dentrix-hero.png",
       "stat": {
         "value": "15",
         "label": "Minutes to Full Integration",
@@ -43,6 +43,7 @@
         {
           "icon": "Calendar",
           "title": "Appointment Reminders",
+          "featureSlug": "appointment-reminders",
           "description": "Automatically send out personalized reminders to your patients via email, text, or phone calls. Confirmations received from patients are recorded in the Dentrix schedule.",
           "benefits": [
             "Reduce no-shows by up to 90%",
@@ -54,6 +55,7 @@
         {
           "icon": "MessageSquare",
           "title": "Two-Way Texting",
+          "featureSlug": "texting",
           "description": "Enable direct text communication with your patients. Answer questions, confirm appointments, and provide quick updates all from one platform.",
           "benefits": [
             "HIPAA-compliant messaging",
@@ -65,6 +67,7 @@
         {
           "icon": "FileText",
           "title": "Paperless Forms",
+          "featureSlug": "online-forms",
           "description": "Easily digitize your patient forms and reduce paper usage. Patients complete forms online before appointments, and data syncs directly to Dentrix.",
           "benefits": [
             "Eliminate paper waste",
@@ -76,6 +79,7 @@
         {
           "icon": "Star",
           "title": "Online Reviews",
+          "featureSlug": "reviews",
           "description": "Boost your online presence by automatically requesting reviews from satisfied patients. Manage and respond to reviews across Google, Facebook, and Yelp.",
           "benefits": [
             "Automated review requests",
@@ -87,6 +91,7 @@
         {
           "icon": "Megaphone",
           "title": "Campaigns & Recalls",
+          "featureSlug": "email-marketing",
           "description": "Send targeted campaigns to promote services, seasonal offers, or recall appointments. Segment patients and track campaign performance.",
           "benefits": [
             "Automated recall reminders",
@@ -98,6 +103,7 @@
         {
           "icon": "CalendarCheck",
           "title": "Online Appointment Booking",
+          "featureSlug": "online-scheduling",
           "description": "Let patients book appointments online 24/7 through your website. Real-time availability syncs with your Dentrix schedule.",
           "benefits": [
             "24/7 booking availability",
@@ -193,7 +199,7 @@
         "No contracts",
         "30-day free trial"
       ],
-      "image": "/integration-hero/open-dental.png",
+      "image": "/integration-heroes/open-dental-hero.png",
       "stat": {
         "value": "15",
         "label": "Minutes Setup Time",
@@ -211,6 +217,7 @@
         {
           "icon": "Calendar",
           "title": "Appointment Reminders",
+          "featureSlug": "appointment-reminders",
           "description": "Automatically send personalized reminders via text, email, or phone calls. Patient confirmations are recorded directly in your Open Dental schedule.",
           "benefits": [
             "Reduce no-shows by up to 90%",
@@ -222,6 +229,7 @@
         {
           "icon": "MessageSquare",
           "title": "Two-Way Texting",
+          "featureSlug": "texting",
           "description": "Enable seamless text communication with patients. Answer questions, confirm appointments, and engage with patients directly from your practice.",
           "benefits": [
             "Text from office or personal devices",
@@ -233,6 +241,7 @@
         {
           "icon": "FileText",
           "title": "Paperless Digital Forms",
+          "featureSlug": "online-forms",
           "description": "Eliminate paper clutter by digitizing all patient forms. Patients can complete forms online before their appointment.",
           "benefits": [
             "Save time on data entry",
@@ -244,6 +253,7 @@
         {
           "icon": "Star",
           "title": "Online Review Management",
+          "featureSlug": "reviews",
           "description": "Automatically request reviews from satisfied patients and manage your online reputation across Google, Facebook, and Yelp.",
           "benefits": [
             "Increase 5-star reviews",
@@ -255,6 +265,7 @@
         {
           "icon": "Megaphone",
           "title": "Campaigns & Promotions",
+          "featureSlug": "email-marketing",
           "description": "Send targeted marketing campaigns to specific patient segments. Promote special offers, seasonal promotions, or new services.",
           "benefits": [
             "Segment patient lists",
@@ -266,6 +277,7 @@
         {
           "icon": "CalendarCheck",
           "title": "Online Appointment Booking",
+          "featureSlug": "online-scheduling",
           "description": "Allow patients to book appointments directly from your website 24/7. Automatically syncs with your Open Dental schedule.",
           "benefits": [
             "Fill last-minute cancellations",
@@ -361,7 +373,7 @@
         "No contracts",
         "30-day free trial"
       ],
-      "image": "/integration-hero/practice-web.png",
+      "image": "/integration-heroes/practice-web-hero.png",
       "stat": {
         "value": "15",
         "label": "Minutes to Complete Setup",
@@ -379,6 +391,7 @@
         {
           "icon": "Calendar",
           "title": "Automated Appointment Reminders",
+          "featureSlug": "appointment-reminders",
           "description": "Send automated appointment reminders via text, email, and phone calls. Patient confirmations automatically update your Practice-Web schedule.",
           "benefits": [
             "Reduce no-shows by up to 90%",
@@ -390,6 +403,7 @@
         {
           "icon": "MessageSquare",
           "title": "Two-Way Patient Texting",
+          "featureSlug": "texting",
           "description": "Communicate directly with patients via text message. Answer questions, confirm appointments, and build relationships.",
           "benefits": [
             "Text from any device",
@@ -401,6 +415,7 @@
         {
           "icon": "FileText",
           "title": "Digital Forms & Paperless Office",
+          "featureSlug": "online-forms",
           "description": "Transform your practice into a paperless office. Patients complete forms online before their visit, saving time and reducing errors.",
           "benefits": [
             "Eliminate paper forms",
@@ -412,6 +427,7 @@
         {
           "icon": "Star",
           "title": "Online Review Generation",
+          "featureSlug": "reviews",
           "description": "Automatically request reviews from happy patients and manage your online reputation across Google, Facebook, and Yelp.",
           "benefits": [
             "Increase positive reviews",
@@ -423,6 +439,7 @@
         {
           "icon": "Megaphone",
           "title": "Patient Campaigns & Promotions",
+          "featureSlug": "email-marketing",
           "description": "Create targeted marketing campaigns to promote services, seasonal offers, or recalls. Engage patients with personalized messaging.",
           "benefits": [
             "Targeted patient segments",
@@ -434,6 +451,7 @@
         {
           "icon": "CalendarCheck",
           "title": "Online Scheduling",
+          "featureSlug": "online-scheduling",
           "description": "Allow patients to book appointments online 24/7 through your website. Real-time availability syncs with Practice-Web.",
           "benefits": [
             "24/7 appointment booking",
@@ -529,7 +547,7 @@
         "No contracts",
         "30-day free trial"
       ],
-      "image": "/integration-hero/eaglesoft.png",
+      "image": "/integration-heroes/eaglesoft-hero.png",
       "stat": {
         "value": "15",
         "label": "Minutes to Full Integration",
@@ -547,6 +565,7 @@
         {
           "icon": "Calendar",
           "title": "Appointment Reminders",
+          "featureSlug": "appointment-reminders",
           "description": "Automatically send out personalized reminders to your patients via email, text, or phone calls. Confirmations received from patients are recorded in the Eaglesoft schedule.",
           "benefits": [
             "Reduce no-shows by up to 90%",
@@ -558,6 +577,7 @@
         {
           "icon": "MessageSquare",
           "title": "Two-Way Texting",
+          "featureSlug": "texting",
           "description": "With PracticeDilly you can search patients in Eaglesoft Family File and send them text messages. Patients can also text you pictures of their ID and Insurance cards.",
           "benefits": [
             "HIPAA-compliant messaging",
@@ -569,6 +589,7 @@
         {
           "icon": "CalendarCheck",
           "title": "Online Scheduling",
+          "featureSlug": "online-scheduling",
           "description": "Allow patients to book appointments online at their convenience. Booked appointments are automatically added to your Eaglesoft schedule.",
           "benefits": [
             "24/7 booking availability",
@@ -580,6 +601,7 @@
         {
           "icon": "FileText",
           "title": "Paperless Forms",
+          "featureSlug": "online-forms",
           "description": "You can easily send out intake forms via text message or email to any patient on your Eaglesoft schedule. We will customize your current forms at no extra cost to you.",
           "benefits": [
             "Eliminate paper waste",
@@ -591,6 +613,7 @@
         {
           "icon": "CreditCard",
           "title": "Text to Pay",
+          "featureSlug": "billing-payments",
           "description": "Take advantage of our software to send payment requests via text/email to your patients on the Eaglesoft family file and get the amount credited to your bank account quickly and efficiently.",
           "benefits": [
             "Faster payment collection",
@@ -602,6 +625,7 @@
         {
           "icon": "Megaphone",
           "title": "Campaigns & Promotions",
+          "featureSlug": "email-marketing",
           "description": "Automatically send birthday greetings, and re-call reminders to patients on the Eaglesoft family file. You can also send out any promotional, and urgent messages to all patients using the mass texting feature.",
           "benefits": [
             "Automated recall reminders",
@@ -613,6 +637,7 @@
         {
           "icon": "Star",
           "title": "Online Reviews",
+          "featureSlug": "reviews",
           "description": "Have your happy patients leave a positive review on Google, Yelp, or Facebook. You can have PracticeDilly send out review requests automatically to patients on your Eaglesoft schedule post-appointment. Alternatively, you can decide which patients to ask for reviews from.",
           "benefits": [
             "Automated review requests",
@@ -624,6 +649,7 @@
         {
           "icon": "Smartphone",
           "title": "Mobile App",
+          "featureSlug": "mobile-app",
           "description": "View your Eaglesoft schedule, message your patients and manage your practice from PracticeDilly's all-in-one dental mobile app.",
           "benefits": [
             "Access from anywhere",

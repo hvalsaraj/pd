@@ -7,15 +7,19 @@ import WaveAnimation from "@/components/WaveAnimation";
 import TestimonialSection from "@/components/TestimonialSection";
 import IntegrationsSection from "@/components/IntegrationsSection";
 import ModernPracticeSection from "@/components/ModernPracticeSection";
-import FeaturesShowcaseSection from "@/components/FeaturesShowcaseSection";
+import IntegrationFeaturesSection from "@/components/integration-child/IntegrationFeaturesSection";
+import featuresData from "@/data/features.json";
 import PricingSection from "@/components/PricingSection";
 import HomeFAQSection from "@/components/HomeFAQSection";
 import CTASection from "@/components/CTASection";
+import CustomerLogosSlider from "@/components/CustomerLogosSlider";
+import SectionContainer from "@/common/SectionContainer";
 import Button from "@/common/Button";
 import { H1 } from "@/common/headings";
 import { Paragraph, SmallText } from "@/common/typography";
-import { Play,Star, Check, Circle, LucideArrowRight } from "lucide-react";
 import type { Metadata } from "next";
+import FeaturesShowcaseSection from "@/components/FeaturesShowcaseSection";
+import PatientEngagementDashboardHero from "@/components/PatientEngagementDashboardHero";
 
 export const metadata: Metadata = {
   title: "AI-Powered Patient Communication for Dental Practices | PracticeDilly",
@@ -70,227 +74,110 @@ export const metadata: Metadata = {
   },
 };
 
-// Avatar images from Unsplash
-const img1 = "/images/avatar-1.png";
-const img2 = "/images/avatar-2.png";
-const img3 = "/images/avatar-3.png";
-
 export default function Home() {
   return (
     <div className="relative min-h-screen">
       {/* Background Elements */}
       {/* <BackgroundElements /> */}
-      
+
       {/* Hero Section */}
-      <div className="relative flex min-h-screen items-center justify-center px-4 py-20 lg:px-16 border-b border-border">
+      <div className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-20 lg:px-16 border-b border-border">
+
+        {/* Patient Engagement dashboard (background) */}
+        <div className="absolute top-0  left-1/2 inset-0 z-1 flex items-center justify-center pointer-events-none">
+          <div className="scale-100 origin-center">
+            <PatientEngagementDashboardHero />
+          </div>
+        </div>
+
         {/* Grid Background */}
-        <GridBackground gridSize={1280/11} contentPadding={64} />
-        
-        
-        {/* ASCII Background Art */}
-        {/* <AnimatedMolar /> */}
+        <GridBackground gridSize={1279 / 11} contentPadding={64} />
+
+
 
         {/* Main Hero Content */}
-        <div className="relative z-10 flex w-full max-w-[960px] flex-col items-center gap-8 text-center p-4 md:p-8 lg:p-[64px]">
+        <div className="relative z-10 flex w-full max-w-[960px] flex-col items-center gap-10 text-center p-4 md:p-8 lg:p-[64px]">
           {/* Badge */}
-          <div className="flex items-center gap-2.5 rounded-full border px-1.5 py-1">
-            <div className="flex items-center rounded-full bg-primary px-1.5 py-px">
-              <Paragraph variant="xs" color="primary" className="text-primary-foreground">New</Paragraph>
-            </div>
-            <Paragraph variant="sm">AI Voice Intelligence 2.0</Paragraph>
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-primary/20 bg-primary/6 px-4 py-2 dark:bg-primary/10">
+            <Paragraph variant="sm" className="text-muted-foreground">
+              Most affordable
+            </Paragraph>
+            <span className="text-muted-foreground/60" aria-hidden="true">•</span>
+            <Paragraph variant="sm" className="text-muted-foreground">
+              Simple to Implement
+            </Paragraph>
+            <span className="text-muted-foreground/60" aria-hidden="true">•</span>
+            <Paragraph variant="sm" className="text-muted-foreground">
+              Easy to Use
+            </Paragraph>
           </div>
 
           {/* Heading and Description */}
-          <div className="flex flex-col gap-6 items-center">
-            <H1>
-              AI-Powered Patient Communication for{" "}<br/>
-              <span className="text-primary">Dental Practices</span>
+          <div className="flex flex-col gap-7 items-center">
+            <H1 className="max-w-[720px] text-balance">
+              The Patient Engagement Platform{" "}
+              <br className="hidden sm:block" />
+              <span className="text-primary bg-clip-text">That Pays for Itself</span>
             </H1>
-            <Paragraph className="max-w-[455px]">
-              Combine phones, texting, scheduling, and recalls in one AI-powered communication hub built for multi-location dental groups and healthcare practices.
+            <Paragraph className="md:max-w-[550px] text-muted-foreground/90 text-base md:text-lg leading-relaxed">
+              Everything your dental practice needs in one place: phones, texting, scheduling, recalls, and patient forms. With AI powered workflows that bind everything together.
             </Paragraph>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center gap-[15px]">
-            <Button variant="primary"
-            >
-              Get Started - No Setup Fee!
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+            <Button variant="primary" href="/contact">
+              Book Demo
             </Button>
-            <Button 
-              variant="secondary" 
-              href="/pricing"
-            >
-              Pricing
+            <Button variant="secondary" href="/pricing">
+              See Pricing
             </Button>
           </div>
-
-          {/* Trust Indicator */}
-          <div className="flex flex-col gap-4">
-            {/* <div className="h-px w-full bg-border" /> */}
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4">
-              <div className="flex items-center gap-0.5" aria-hidden="true">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-warning fill-warning" />
-                ))}
-              </div>
-              <Paragraph variant="sm" weight="medium" className="sm:text-base sm:leading-6 text-center sm:text-left">
-                PracticeDilly is Trusted by <span className="text-primary">500+</span> practices
-              </Paragraph>
-            </div>
-          </div>
-        </div>
-
-        {/* Left Widget - Action Items */}
-        {/* Outer border-radius: 6.4px, inner adjusted to match (no gap between them) */}
-        <div className="absolute z-40 left-4 top-[388px] hidden w-[280px] md:w-[328.8px] rounded-[6.4px] shadow-[0px_20px_60px_0px_rgba(0,0,0,0.1)] lg:left-[91px] xl:block">
-          <div className="overflow-hidden rounded-[6.4px] border border-border bg-card">
-            {/* Header */}
-            <header className="border-b border-border px-2.5 py-3.5">
-              <h2 className="text-sm font-medium leading-[22.4px] text-foreground m-0">Action Items</h2>
-              <p className="text-right text-[9.6px] leading-[12.8px] text-muted m-0">Priority To-Dos</p>
-            </header>
-
-            {/* Items */}
-            <div className="border-b border-border bg-muted/5 px-2.5 py-2.5">
-              <div className="flex gap-4">
-                <div className="flex items-center pt-0.5">
-                  <Check className="h-4 w-4 text-primary" />
-                </div>
-                <div className="flex w-16 flex-col text-xs leading-[12.8px] text-muted">
-                  <p className="text-xs leading-[19.2px] text-foreground">11:23 AM</p>
-                  <p className="text-[9.6px] leading-[12.8px]">30 mins</p>
-                </div>
-                <div className="flex-1">
-                  <p className="text-xs leading-[19.2px] text-foreground">Follow up: Missed call</p>
-                  <p className="text-[9.6px] leading-[12.8px] text-muted">(949) 555-0123 - 11:23 AM</p>
-                  <p className="text-[9.6px] leading-[12.8px] text-muted">Patient called about insurance</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="border-b border-border px-2.5 py-2.5">
-              <div className="flex gap-4">
-                <div className="flex items-center pt-0.5">
-                  <Circle className="h-4 w-4 text-muted" strokeWidth={1.5} />
-                </div>
-                <div className="flex-1">
-                  <p className="text-xs leading-[19.2px] text-foreground">Confirm: Neville L. appointment</p>
-                  <p className="text-[9.6px] leading-[12.8px] text-muted">10:30 AM tomorrow</p>
-                  <p className="text-[9.6px] leading-[12.8px] text-muted">Crown prep - 90 min blocked</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="border-b border-border px-2.5 py-2.5">
-              <div className="flex gap-4">
-                <div className="flex items-center pt-0.5">
-                  <Circle className="h-4 w-4 text-muted" strokeWidth={1.5} />
-                </div>
-                <div className="flex-1">
-                  <p className="text-xs leading-[19.2px] text-foreground">Recalls Due</p>
-                  <p className="text-[9.6px] leading-[12.8px] text-muted">Cho C. - 6mo Hygiene</p>
-                  <p className="text-[9.6px] leading-[12.8px] text-muted">Last visit: 6 months ago</p>
-                  <p className="text-[9.6px] leading-[12.8px] text-muted">Preferred: Weekday mornings</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Widget - Today's Appointments */}
-        {/* Outer border-radius: 6.4px, inner adjusted to match (no gap between them) */}
-        <div className="absolute z-50 right-4 top-[467.1px] hidden w-[280px] md:w-[355.2px] rounded-[6.4px] shadow-[0px_20px_60px_0px_rgba(0,0,0,0.1)] xl:right-[calc(50%+285px)] xl:block">
-          <div className="overflow-hidden rounded-[6.4px] border border-border bg-card">
-            {/* Header */}
-            <header className="border-b border-border px-2.5 py-3.5">
-              <h2 className="text-sm font-medium leading-[22.4px] text-foreground m-0">Today's Appointments</h2>
-              <p className="text-right text-[9.6px] leading-[12.8px] text-muted m-0">3 appointments</p>
-            </header>
-
-            {/* Appointment 1 */}
-            <div className="border-b border-border px-2.5 py-2.5">
-              <div className="flex items-center gap-4">
-                <div className="flex w-20 flex-col text-xs leading-[12.8px] text-muted">
-                  <p className="text-xs leading-[19.2px] text-foreground">09:00 AM</p>
-                  <p className="text-[9.6px] leading-[12.8px]">30 mins</p>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="relative h-8 w-8 overflow-hidden rounded-full">
-                    <img alt="" className="h-full w-full object-cover" src={img1} role="presentation" />
-                  </div>
-                  <div className="flex w-[120px] flex-col gap-0.5">
-                    <p className="text-xs leading-[19.2px] text-foreground">Luna L.</p>
-                    <p className="text-[9.6px] leading-[12.8px] text-muted">Cleaning & Checkup</p>
-                  </div>
-                </div>
-                <div className="ml-auto flex items-center">
-                  <div className="rounded-[10px] border border-green-300 bg-green-50 dark:border-green-600 dark:bg-green-950 px-1.5 py-1">
-                    <p className="text-[8px] leading-[8.8px] text-green-700 dark:text-green-200">Confirmed</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Appointment 2 */}
-            <div className="border-b border-border px-2.5 py-2.5">
-              <div className="flex items-center gap-4">
-                <div className="flex w-20 flex-col text-xs leading-[12.8px] text-muted">
-                  <p className="text-xs leading-[19.2px] text-foreground">10:30 AM</p>
-                  <p className="text-[9.6px] leading-[12.8px]">90 min</p>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="relative h-8 w-8 overflow-hidden rounded-full">
-                    <img alt="" className="h-full w-full object-cover" src={img2} role="presentation" />
-                  </div>
-                  <div className="flex w-[120px] flex-col gap-0.5">
-                    <p className="text-xs leading-[19.2px] text-foreground">Neville L.</p>
-                    <p className="text-[9.6px] leading-[12.8px] text-muted">Crown Prep</p>
-                  </div>
-                </div>
-                <div className="ml-auto flex items-center">
-                  <div className="rounded-[10px] border border-warning/30 bg-warning/10 dark:border-warning/50 dark:bg-warning/20 px-1.5 py-1">
-                    <p className="text-[8px] leading-[8.8px] text-warning-700 dark:text-warning-200">Pending</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Appointment 3 */}
-            <div className="border-b border-border px-2.5 py-2.5">
-              <div className="flex items-center gap-4">
-                <div className="flex w-20 flex-col text-xs leading-[12.8px] text-muted">
-                  <p className="text-xs leading-[19.2px] text-foreground">02:00 PM</p>
-                  <p className="text-[9.6px] leading-[12.8px]">1 hr 30 mins</p>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="relative h-8 w-8 overflow-hidden rounded-full">
-                    <img alt="" className="h-full w-full object-cover" src={img3} role="presentation" />
-                  </div>
-                  <div className="flex w-[120px] flex-col gap-0.5">
-                    <p className="text-xs leading-[19.2px] text-foreground">Ginny W.</p>
-                    <p className="text-[9.6px] leading-[12.8px] text-muted">Root Canal Follow-up</p>
-                  </div>
-                </div>
-                <div className="ml-auto flex items-center">
-                  <div className="rounded-[10px] border border-blue-300 bg-blue-50 dark:border-blue-600 dark:bg-blue-950 px-1.5 py-1">
-                    <p className="text-[8px] leading-[8.8px] text-blue-700 dark:text-blue-200">Checked out</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Paragraph variant="sm" className="text-muted-foreground/80 text-center">
+            Start free. No setup fee.
+          </Paragraph>
         </div>
       </div>
-      <WhyPracticeDilly />
-      <TestimonialSection />
-      <IntegrationsSection />
-      <ModernPracticeSection />
-      <FeaturesShowcaseSection />
-      <PricingSection />
-      <HomeFAQSection />
-      <CTASection />
-      
+
+      <SectionContainer
+        paddingTop="pt-0"
+        paddingBottom="pb-0"
+        className="-mt-px border-t-0 border-b border-border"
+      >
+        <CustomerLogosSlider />
+      </SectionContainer>
+
+      <WhyPracticeDilly showGapBefore />
+      <TestimonialSection showGapBefore />
+      <IntegrationsSection showGapBefore />
+      {/* <ModernPracticeSection showGapBefore /> */}
+
+      <IntegrationFeaturesSection
+        heading={{
+          text: "Efficiently Automate Your ",
+          highlighted: "Front Office",
+          suffix: "",
+        }}
+        description="PracticeDilly provides comprehensive tools designed to automate and modernize every aspect of your practice management."
+        items={featuresData.map((f) => ({
+          icon: f.hero?.category?.icon ?? "",
+          title: [f.hero?.heading?.text, f.hero?.heading?.highlighted, f.hero?.heading?.suffix].filter(Boolean).join("").trim() || f.slug,
+          description: f.hero?.description ?? "",
+          benefits: f.hero?.badges,
+          featureSlug: f.slug,
+          image: f.hero?.image,
+        }))}
+        sectionLabel="Features"
+        sectionIndex={6}
+        sectionTotal={7}
+        showGapBefore
+      />
+      <FeaturesShowcaseSection showGapBefore />
+
+      <PricingSection showGapBefore />
+      <HomeFAQSection showGapBefore />
+      <CTASection showGapBefore={false} />
+
       {/* <WaveAnimation /> */}
     </div>
   );

@@ -14,14 +14,26 @@ interface IntegrationWhyChooseSectionProps {
     title: string;
     description: string;
   }>;
+  sectionIndex?: number;
+  sectionTotal?: number;
+  showGapBefore?: boolean;
 }
 
 export default function IntegrationWhyChooseSection({
   heading,
   items,
+  sectionIndex,
+  sectionTotal,
+  showGapBefore,
 }: IntegrationWhyChooseSectionProps) {
   return (
-    <SectionContainer className="items-start border-t">
+    <SectionContainer
+      className="items-start border-t"
+      sectionLabel="Why Choose"
+      sectionIndex={sectionIndex}
+      sectionTotal={sectionTotal}
+      showGapBefore={showGapBefore}
+    >
       <div className="flex flex-col gap-4 items-start px-4 md:px-8 lg:px-16 w-full max-w-[597px]">
         <HeadingWithHighlight
           text={heading.text}

@@ -203,8 +203,8 @@
   },
   "testimonials": {
     "hero": {
-      "label": "Testimonials",
-      "heading": "Customer Reviews & Testimonials",
+      "label": "Reviews",
+      "heading": "Customer Reviews",
       "description": "Dental practices owners and office managers share their stories about why they're passionate about what they do and how PracticeDilly helped them along the way.",
       "ctaPrimary": "Get Started - No Setup Fee!",
       "ctaSecondary": "Call (949) 407-5907"
@@ -229,6 +229,6 @@
   },
   "search": {
     "heading": "Search",
-    "description": "Search across our blog posts, features, integrations, and testimonials"
+    "description": "Search across our blog posts, features, integrations, and reviews"
   }
 }

@@ -4,7 +4,11 @@ import Button from "@/common/Button";
 import { H3 } from "@/common/headings";
 import { Check, ArrowRight } from "lucide-react";
 
-export default function PricingSection() {
+interface PricingSectionProps {
+  showGapBefore?: boolean;
+}
+
+export default function PricingSection({ showGapBefore }: PricingSectionProps = {}) {
   const singleLocationFeatures = [
     "Simple setup in under 15 minutes",
     "All-in-one communication hub",
@@ -21,7 +25,13 @@ export default function PricingSection() {
   ];
 
   return (
-    <SectionContainer className="items-start">
+    <SectionContainer
+      className="items-start"
+      sectionLabel="Pricing"
+      sectionIndex={6}
+      sectionTotal={7}
+      showGapBefore={showGapBefore}
+    >
       <div className="w-full">
         <div className="flex flex-col gap-10 items-center mb-10">
           <SectionHeader
@@ -138,9 +148,9 @@ export default function PricingSection() {
           <Button
             variant="secondary"
             className="px-8 py-3 text-base font-medium"
-            href="/pricing"
+            href="/contact"
           >
-            Get Pricing
+            Book Demo
           </Button>
           <p className="font-sans font-normal text-xs leading-4 text-muted text-center">
             Setup takes less than 15 minutes • No credit card required

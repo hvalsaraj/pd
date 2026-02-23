@@ -16,15 +16,27 @@ interface FeatureWhyChooseSectionProps {
     title: string;
     description: string;
   }>;
+  sectionIndex?: number;
+  sectionTotal?: number;
+  showGapBefore?: boolean;
 }
 
 export default function FeatureWhyChooseSection({
   heading,
   description,
   items,
+  sectionIndex,
+  sectionTotal,
+  showGapBefore,
 }: FeatureWhyChooseSectionProps) {
   return (
-    <SectionContainer className="items-center md:items-start">
+    <SectionContainer
+      className="items-center md:items-start"
+      sectionLabel="Why Choose"
+      sectionIndex={sectionIndex}
+      sectionTotal={sectionTotal}
+      showGapBefore={showGapBefore}
+    >
       <div className="flex md:flex-row flex-col md:gap-16 gap-6 items-center md:items-start px-4 md:px-8 lg:px-12 py-6 md:py-12 lg:py-16 w-full">
         <HeadingWithHighlight
           text={heading.text}

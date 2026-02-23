@@ -10,7 +10,11 @@ interface FAQItemData {
   answer: string;
 }
 
-export default function HomeFAQSection() {
+interface HomeFAQSectionProps {
+  showGapBefore?: boolean;
+}
+
+export default function HomeFAQSection({ showGapBefore }: HomeFAQSectionProps = {}) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqItems: FAQItemData[] = [
@@ -41,9 +45,17 @@ export default function HomeFAQSection() {
   };
 
   return (
-    <SectionContainer className="items-start">
-      <div className="w-full flex flex-col md:flex-row border-t">
+    <SectionContainer
+      className="items-start"
+      sectionLabel="FAQ"
+      sectionIndex={7}
+      sectionTotal={7}
+      showGapBefore={showGapBefore}
+      gap="gap-0"
+    >
+      <div className="w-full flex flex-col md:flex-row">
         <div className="border-border border-r border-b flex flex-col gap-4 items-start justify-start px-4 md:px-8 lg:px-16 py-8 md:py-10 lg:py-14 relative shrink-0 w-full md:w-1/2">
+
           <HeadingWithHighlight
             text="Frequently Asked "
             highlighted="Questions"

@@ -36,7 +36,12 @@ export default function ContactPage() {
       </div>
 
       {/* Contact Information Section */}
-      <SectionContainer className="items-center">
+      <SectionContainer
+        className="items-center"
+        sectionLabel="Contact Information"
+        sectionIndex={1}
+        sectionTotal={2}
+      >
         <div className="w-full px-4 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -95,9 +100,14 @@ export default function ContactPage() {
           </div>
         </div>
       </SectionContainer>
-
       {/* Additional Contact Info Section */}
-      <SectionContainer className="items-center">
+      <SectionContainer
+        className="items-center"
+        sectionLabel="We're Here to Help"
+        sectionIndex={2}
+        sectionTotal={2}
+        showGapBefore
+      >
         <div className="w-full px-4 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <div className="border border-border rounded-xl bg-card p-8 md:p-12">

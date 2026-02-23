@@ -3,7 +3,6 @@
 import SectionContainer from "@/common/SectionContainer";
 import TestimonialCard from "@/common/TestimonialCard";
 import SectionHeader from "@/common/SectionHeader";
-import { MessageCircleHeart } from "lucide-react";
 import testimonialsData from "@/data/testimonials.json";
 import Button from "@/common/Button";
 import Link from "next/link";
@@ -84,7 +83,20 @@ function TestimonialRow({ testimonials, direction = "left", speed = 30 }: Testim
   );
 }
 
-export default function TestimonialSection() {
+interface TestimonialSectionProps {
+  /** Override section index when used on internal pages (e.g. 4 for pricing) */
+  sectionIndex?: number;
+  /** Override section total when used on internal pages (e.g. 5 for pricing) */
+  sectionTotal?: number;
+  /** When true, renders SectionGap before section identifier (e.g. on home page between sections) */
+  showGapBefore?: boolean;
+}
+
+export default function TestimonialSection({
+  sectionIndex,
+  sectionTotal,
+  showGapBefore,
+}: TestimonialSectionProps = {}) {
   // Convert testimonials data to the format expected by TestimonialCard
   const allTestimonials: Testimonial[] = testimonialsData as Testimonial[];
   
@@ -108,11 +120,15 @@ export default function TestimonialSection() {
   const row2Cards = row2Testimonials.map(convertToCardFormat);
 
   return (
-    <SectionContainer className="items-center border-t border-border">
+    <SectionContainer
+      className="items-center"
+      sectionLabel="Reviews"
+      sectionIndex={sectionIndex ?? 2}
+      sectionTotal={sectionTotal ?? 7}
+      showGapBefore={showGapBefore}
+    >
       {/* Header Section */}
       <SectionHeader
-        icon={MessageCircleHeart}
-        label="Testimonials"
         heading={{
           text: "",
           highlighted: "Loved by Dentists ",
@@ -133,7 +149,7 @@ export default function TestimonialSection() {
 
       {/* Read More Link */}
       <div className="flex justify-center mt-8">
-        <Link href="/testimonials">
+        <Link href="/reviews">
         <Button variant="secondary" className="">
           Read More Success Stories
         </Button>

@@ -1,10 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
 import SectionContainer from "@/common/SectionContainer";
 import HeadingWithHighlight from "@/common/HeadingWithHighlight";
 import Button from "@/common/Button";
+import FeatureCard from "@/common/FeatureCard";
 import integrationsData from "@/data/integrations.json";
 import TestimonialSection from "@/components/TestimonialSection";
 import GridBackground from "@/components/GridBackground";
@@ -44,81 +43,32 @@ export default function IntegrationsPage() {
       </div>
 
       {/* Integrations Grid */}
-      <SectionContainer className="items-start">
-        <div className="w-full py-16 md:py-20 lg:py-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-[1280px] mx-auto -ml-px gap-y-16 border-border">
-            {integrationsData.map((integration) => {
-              // Map slugs to logo paths
-              const logoMap: Record<string, string> = {
-                dentrix: "/integrations/logos/dentrix.png",
-                eaglesoft: "/integrations/logos/eagle-soft.png",
-                opendental: "/integrations/logos/open-dental.png",
-                "practice-web": "/integrations/logos/practice-web.png", // Fallback if exists
-              };
-              
-              const logoPath = logoMap[integration.slug] || `/integrations/logos/${integration.slug}.png`;
-
-              return (
-                <Link
-                  key={integration.slug}
-                  href={`/integrations/${integration.slug}`}
-                  className="group bg-card border-l border-y border-border flex flex-col gap-6 hover:border-b-primary transition-all duration-200 hover:shadow-lg h-full"
-                >
-
-                 
-                  {/* Logo */}
-                  <div className="relative w-full h-32 md:h-40 flex items-center justify-center bg-background overflow-hidden">
-                    <Image
-                      src={logoPath}
-                      alt={integration.hero.heading.text + (integration.hero.heading.highlighted || "") + (integration.hero.heading.suffix || "")}
-                      width={200}
-                      height={80}
-                      className="object-contain max-w-full h-auto group-hover:scale-105 transition-transform duration-200 dark:grayscale dark:brightness-[1.4]"
-                    />
-                  </div>
-
-                  <div className="px-6 pb-6 flex flex-col gap-4 flex-1">
-                  {/* Title */}
-
-                  {/* Description */}
-                  <p className="font-sans font-normal text-sm md:text-base leading-6 text-muted line-clamp-3">
-                    {integration.hero.description}
-                  </p>
-
-
-
-                  {/* Badges */}
-                  {integration.hero.badges && integration.hero.badges.length > 0 && (
-                    <div className="flex flex-wrap gap-2 pt-2">
-                      {integration.hero.badges.map((badge, index) => (
-                        <span
-                          key={index}
-                          className="text-xs font-medium text-muted bg-background px-2.5 py-1 rounded-full"
-                        >
-                          {badge}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Link Arrow */}
-                  <div className="flex items-center gap-2 text-primary font-medium text-sm mt-auto pt-2">
-                    <span>Start Now</span>
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </div>
-
-                  </div>
-                </Link>
-              );
-            })}
+      <SectionContainer
+        className="items-start"
+        sectionLabel="Integrations"
+        sectionIndex={1}
+        sectionTotal={2}
+      >
+        <div className="w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-[1280px] mx-auto border-t border-border">
+            {integrationsData.map((integration) => (
+              <FeatureCard
+                key={integration.slug}
+                image={integration.hero.image}
+                title={`${integration.hero.heading.highlighted} Integration`}
+                description={integration.hero.description}
+                href={`/integrations/${integration.slug}`}
+                category={integration.hero.category.text}
+                // badges={integration.hero.badges}
+                variant="detailed"
+              />
+            ))}
           </div>
-
         </div>
       </SectionContainer>
-
       {/* Reusable Sections from Homepage */}
-      <TestimonialSection />
-      <CTASection />
+      <TestimonialSection sectionIndex={2} sectionTotal={2} showGapBefore />
+      <CTASection showGapBefore={false} />
     </div>
   );
 }

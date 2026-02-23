@@ -4,6 +4,7 @@ import TestimonialSection from "@/components/TestimonialSection";
 import IntegrationWhyChooseSection from "@/components/integration-child/IntegrationWhyChooseSection";
 import IntegrationCTASection from "@/components/integration-child/IntegrationCTASection";
 import integrationsData from "@/data/integrations.json";
+import featuresData from "@/data/features.json";
 import { notFound } from "next/navigation";
 import IntegrationTimeSection from "@/components/integration-child/IntegrationTimeSection";
 import type { Metadata } from "next";
@@ -84,15 +85,50 @@ export default async function IntegrationPage({ params }: IntegrationPageProps) 
   if (!integrationData) {
     notFound();
   }
-  
+
+  const featureHeroImageMap: Record<string, string> = {};
+  for (const feature of featuresData) {
+    if (feature.hero?.image) {
+      featureHeroImageMap[feature.slug] = feature.hero.image;
+    }
+  }
+
+  const enrichedFeaturesItems = integrationData.features.items.map((item) => ({
+    ...item,
+    image: item.featureSlug ? featureHeroImageMap[item.featureSlug] : undefined,
+  }));
+
+  const SECTION_TOTAL = 5;
+
   return (
     <div className="relative min-h-screen">
       <IntegrationHeroSection {...integrationData.hero} image={integrationData.hero.image} />
-      <IntegrationTimeSection stat={integrationData.hero.stat} primaryCta={integrationData.hero.cta} />
-      <IntegrationFeaturesSection {...integrationData.features} />
-      <TestimonialSection />
-      <IntegrationWhyChooseSection {...integrationData.whyChoose} />
-      <CTASection />
+      <IntegrationTimeSection
+        stat={integrationData.hero.stat}
+        primaryCta={integrationData.hero.cta}
+        // sectionLabel="Overview"
+        // sectionIndex={1}
+        // sectionTotal={SECTION_TOTAL}
+        // showGapBefore
+      />
+      <IntegrationFeaturesSection
+        {...integrationData.features}
+        items={enrichedFeaturesItems}
+        sectionLabel="Features"
+        sectionIndex={2}
+        sectionTotal={SECTION_TOTAL}
+        showGapBefore
+      />
+      <TestimonialSection sectionIndex={3} sectionTotal={SECTION_TOTAL} showGapBefore />
+      <IntegrationWhyChooseSection
+        {...integrationData.whyChoose}
+        sectionIndex={4}
+        sectionTotal={SECTION_TOTAL}
+        showGapBefore
+      />
+      <CTASection
+        showGapBefore={false}
+      />
     </div>
   );
 }

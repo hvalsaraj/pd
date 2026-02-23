@@ -18,12 +18,18 @@ interface FeatureFAQSectionProps {
   };
   description: string;
   items: FAQItemData[];
+  sectionIndex?: number;
+  sectionTotal?: number;
+  showGapBefore?: boolean;
 }
 
 export default function FeatureFAQSection({
   heading,
   description,
   items,
+  sectionIndex,
+  sectionTotal,
+  showGapBefore,
 }: FeatureFAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -32,8 +38,15 @@ export default function FeatureFAQSection({
   };
 
   return (
-    <SectionContainer className="items-center md:items-start w-full">
-      <div className="w-full flex flex-col md:flex-row border-t">
+    <SectionContainer
+      className="items-center md:items-start w-full"
+      sectionLabel="FAQ"
+      sectionIndex={sectionIndex}
+      sectionTotal={sectionTotal}
+      showGapBefore={showGapBefore}
+      gap=""
+    >
+      <div className="w-full flex flex-col md:flex-row">
         <div className="border-border border-r border-b flex flex-col gap-4 items-center md:items-start justify-center md:justify-start px-4 md:px-8 lg:px-12 py-8 md:py-10 lg:py-14 relative shrink-0 w-full md:w-1/2">
           <HeadingWithHighlight
             text={heading.text}

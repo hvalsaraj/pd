@@ -44,7 +44,12 @@ export default function ArticleIndexPage() {
       </div>
 
       {/* Blog Posts Grid */}
-      <SectionContainer className="items-start px-4 md:px-8 lg:px-16">
+      <SectionContainer
+        className="items-start px-4 md:px-8 lg:px-16"
+        sectionLabel="Articles"
+        sectionIndex={1}
+        sectionTotal={1}
+      >
         <div className="w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-[37px] max-w-[1280px] mx-auto border-border">
             {blogsData.map((blog) => (

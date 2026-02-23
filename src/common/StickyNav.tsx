@@ -190,7 +190,7 @@ export default function StickyNav() {
             {/* Mega Menu Dropdown */}
             {isFeaturesOpen && (
               <div 
-                className="fixed inset-x-0 bg-background shadow-2xl border-x-0 border-b border-t-0 border-border z-50"
+                className="fixed inset-x-0 bg-background border-x-0 border-b border-t-0 border-border z-50"
                 style={{ top: `${navHeight}px` }}
                 onMouseEnter={() => {
                   if (featuresCloseTimeoutRef.current) {
@@ -253,10 +253,10 @@ export default function StickyNav() {
 
           <li>
             <Link
-              href="/testimonials"
+              href="/reviews"
               className="text-sm font-normal px-3 py-2 rounded-lg transition-colors text-foreground hover:text-primary"
             >
-              Testimonials
+              Reviews
             </Link>
           </li>
 
@@ -324,7 +324,7 @@ export default function StickyNav() {
             {/* Mega Menu Dropdown */}
             {isIntegrationsOpen && (
               <div 
-                className="fixed inset-x-0 bg-background shadow-2xl border-x-0 border-b border-t-0 border-border z-50"
+                className="fixed inset-x-0 bg-background border-x-0 border-b border-t-0 border-border z-50"
                 style={{ top: `${navHeight}px` }}
                 onMouseEnter={() => {
                   if (integrationsCloseTimeoutRef.current) {
@@ -436,7 +436,7 @@ export default function StickyNav() {
             {/* Mega Menu Dropdown */}
             {isResourcesOpen && (
               <div 
-                className="fixed inset-x-0 bg-background shadow-2xl border-x-0 border-b border-t-0 border-border z-50"
+                className="fixed inset-x-0 bg-background border-x-0 border-b border-t-0 border-border z-50"
                 style={{ top: `${navHeight}px` }}
                 onMouseEnter={() => {
                   if (resourcesCloseTimeoutRef.current) {
@@ -637,7 +637,7 @@ export default function StickyNav() {
       {/* Mobile Menu */}
       <div
         ref={mobileMenuRef}
-        className={`lg:hidden fixed top-[62px] left-0 right-0 bg-background border-b border-border z-[60] max-h-[calc(100vh-105px)] overflow-y-auto shadow-lg transition-transform duration-300 ease-in-out ${
+        className={`lg:hidden fixed top-[62px] left-0 right-0 bg-background border-b border-border z-[60] max-h-[calc(100vh-105px)] overflow-y-auto transition-transform duration-300 ease-in-out ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
         }`}
       >
@@ -710,14 +710,14 @@ export default function StickyNav() {
               )}
             </li>
 
-            {/* Testimonials - Mobile */}
+            {/* Reviews - Mobile */}
             <li className="border-b border-border">
               <Link
-                href="/testimonials"
+                href="/reviews"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block text-sm font-normal px-3 py-3 rounded-lg transition-colors text-foreground hover:text-primary"
               >
-                Testimonials
+                Reviews
               </Link>
             </li>
 

@@ -8,27 +8,31 @@ import AttractPatientsUI from "@/common/ui-animation/AttractPatientsUI";
 import RunSmootherDayUI from "@/common/ui-animation/RunSmootherDayUI";
 import BringThemBackUI from "@/common/ui-animation/BringThemBackUI";
 
-export default function ModernPracticeSection() {
+interface ModernPracticeSectionProps {
+  showGapBefore?: boolean;
+}
+
+export default function ModernPracticeSection({ showGapBefore }: ModernPracticeSectionProps = {}) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const features = [
     {
       icon: "Magnet",
-      title: "Attract patients",
+      title: "Attract Patients",
       description:
-        "Keep patients engaged between visits. Patients show up, rebook, and stay loyal without extra front-desk effort.",
+        "Bring in more new patients every day. Turn every missed call into a booked appointment. Smart phones, automated reviews, and online scheduling work together so your practice never stops growing.",
       uiComponent: <AttractPatientsUI />,
     },
     {
       icon: "Sun",
-      title: "Run a smoother day",
+      title: "Engage & Retain",
       description:
         "Run your entire patient journey from one workspace. Every interaction moves patients from first contact to completed treatment.",
       uiComponent: <RunSmootherDayUI />,
     },
     {
       icon: "Route",
-      title: "Bring them back",
+      title: "Grow Revenue",
       description:
         "Keep patients for years, not months. Automated recall and reactivation campaigns that fill your schedule.",
       uiComponent: <BringThemBackUI />,
@@ -38,15 +42,22 @@ export default function ModernPracticeSection() {
   const selectedFeature = features[selectedIndex];
 
   return (
-    <SectionContainer className="items-start border-t border-border">
+    <SectionContainer
+      className="items-start border-t border-border"
+      sectionLabel="Features"
+      sectionIndex={4}
+      sectionTotal={7}
+      showGapBefore={showGapBefore}
+      paddingBottom=""
+    >
       <div className="w-full">
         <div className="flex flex-col gap-6 md:gap-10 items-center mb-6 md:mb-10">
           <SectionHeader
             heading={{
-              text: "Everything You Need To Run a ",
-              highlighted: "Modern Practice",
+              text: "Everything Your Practice ",
+              highlighted: "Needs",
             }}
-            description="A complete platform that helps you attract, manage, and retain patients without the manual admin tasks."
+            description="One platform built for teams who want results, not more software to manage."
             className="max-w-[565px]"
           />
         </div>
@@ -94,9 +105,9 @@ export default function ModernPracticeSection() {
         </div>
 
         {/* Desktop: Two-column layout: List on left, UI on right */}
-        <div className="hidden md:flex flex-row items-start border-y border-border">
+        <div className="hidden md:flex flex-row items-start border-y border-border box-border">
           {/* Left: Feature List */}
-          <div className="flex flex-col w-1/3 border-r border-border justify-betwee  box-content">
+          <div className="flex flex-col w-1/3 border-r border-border justify-between box-border">
             {features.map((feature, index) => {
               const IconComponent = getIcon(feature.icon);
               const isSelected = index === selectedIndex;
@@ -144,7 +155,7 @@ export default function ModernPracticeSection() {
           </div>
 
           {/* Right: Animated UI Component */}
-          <div className="w-2/3 flex bg-primary/30 p-12 min-h-[494px]">
+          <div className="w-2/3 flex bg-primary/30 p-12 min-h-[494px] border-y">
             <div className="w-full transition-opacity flex justify-center items-center" key={selectedIndex}>
               {selectedFeature.uiComponent}
             </div>

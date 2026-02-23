@@ -6,7 +6,7 @@ const MARKDOWN_ACCEPT = new RegExp('\\btext/markdown\\b', 'i');
 const EXCLUDED_PREFIXES = ['/api/', '/_next/'];
 const MARKDOWN_HANDLER_PATH = '/api/accept-md';
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const accept = (request.headers.get('accept') || '').toLowerCase();
   if (!MARKDOWN_ACCEPT.test(accept)) return NextResponse.next();

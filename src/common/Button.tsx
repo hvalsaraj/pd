@@ -27,12 +27,15 @@ export default function Button({
   disabled = false,
   "aria-label": ariaLabel,
 }: ButtonProps) {
-  const baseStyles = "flex items-center justify-center text-sm font-medium px-3 py-2.5 rounded-[10px] transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none";
-  
+  const baseStyles =
+    "inline-flex items-center justify-center text-sm font-medium px-3 py-2.5 rounded-[10px] transition-all duration-300 ease-out disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none active:scale-[0.98]";
+
   const variantStyles = {
-    primary: "bg-primary text-primary-foreground hover:bg-primary-hover px-4 justify-between gap-4",
-    secondary: "text-secondary font-medium hover:text-primary border bg-border",
-    link: "font-medium hover:text-primary-hover bg-transparent",
+    primary:
+      "bg-primary text-primary-foreground hover:bg-primary-hover px-4 gap-4 focus-visible:ring-offset-primary/20",
+    secondary:
+      "text-secondary font-medium border border-border bg-background hover:text-primary hover:border-primary/40 hover:bg-primary/5 active:bg-primary/8",
+    link: "font-medium text-primary hover:text-primary-hover bg-transparent hover:underline underline-offset-4 active:scale-100",
   };
 
   const content = (

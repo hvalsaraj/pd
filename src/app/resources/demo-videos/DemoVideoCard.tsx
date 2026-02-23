@@ -43,14 +43,14 @@ export default function DemoVideoCard({ video, categoryName }: DemoVideoCardProp
       )}
       {hasVideo && !hasSlug && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition-opacity group-hover:opacity-100">
-          <div className="flex size-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg">
+          <div className="flex size-14 items-center justify-center rounded-full bg-primary text-primary-foreground">
             <Play className="size-7 ml-1" fill="currentColor" aria-hidden />
           </div>
         </div>
       )}
       {hasSlug && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition-opacity group-hover:opacity-100">
-          <div className="flex size-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg">
+          <div className="flex size-14 items-center justify-center rounded-full bg-primary text-primary-foreground">
             <Play className="size-7 ml-1" fill="currentColor" aria-hidden />
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function DemoVideoCard({ video, categoryName }: DemoVideoCardProp
   );
 
   const cardClass =
-    "group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all duration-200 hover:border-primary hover:shadow-md";
+    "group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all duration-200 hover:border-primary";
 
   if (hasSlug) {
     return (
@@ -110,7 +110,7 @@ export default function DemoVideoCard({ video, categoryName }: DemoVideoCardProp
           onClick={() => setShowEmbed(false)}
         >
           <div
-            className="relative w-full max-w-4xl rounded-xl bg-card shadow-xl"
+            className="relative w-full max-w-4xl rounded-xl bg-card"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="aspect-video w-full overflow-hidden rounded-t-xl">
